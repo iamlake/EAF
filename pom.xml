@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	
 	<name>sams</name>
-	<url>http://blog.csdn.net/iamlake</url>
+	<url>https://github.com/iamlake/EAF</url>
 	<inceptionYear>2016-2018</inceptionYear>	
 	
 	<!-- 项目属性 -->
