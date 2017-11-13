@@ -1,0 +1,17 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": [
+        {
+        "src": "/sams/assets/images/userface1.jpg"
+        },{
+        "src": "/sams/assets/images/userface2.jpg"
+        },{
+        "src": "/sams/assets/images/userface3.jpg"
+        },{
+        "src": "/sams/assets/images/userface4.jpg"
+        },{
+        "src": "/sams/assets/images/userface5.jpg"
+        }
+    ]
+} 

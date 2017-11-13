@@ -1,0 +1,41 @@
+[{
+	"title" : "后台首页",
+	"icon" : "icon-computer",
+	"href" : "http://localhost:8088/sams/rest/page/dashboard",
+	"spread" : false
+},{
+	"title" : "文章列表",
+	"icon" : "icon-text",
+	"href" : "http://localhost:8088/sams/rest/page/news",
+	"spread" : false
+},{
+	"title" : "友情链接",
+	"icon" : "&#xe64c;",
+	"href" : "http://localhost:8088/sams/rest/page/links",
+	"spread" : false
+},{
+	"title" : "系统基本参数",
+	"icon" : "&#xe631;",
+	"href" : "http://localhost:8088/sams/rest/page/sysparam",
+	"spread" : false
+},{
+	"title" : "其他页面",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "404页面",
+			"icon" : "&#xe61c;",
+			"href" : "http://localhost:8088/sams/rest/page/404",
+			"spread" : false
+		},
+		{
+			"title" : "登录",
+			"icon" : "&#xe609;",
+			"href" : "http://localhost:8088/sams/rest/page/login",
+			"spread" : false,
+			"target" : "_blank"
+		}
+	]
+}]

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<description>Spring Configuration</description>
+
+	<!-- 引用配置文件 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="classpath:config.properties">
+	</bean>
+
+	<!-- 数据源 不使用连接池
+		<bean id="dataSource"
+			class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+			p:driverClassName="${jdbc.datasource.driverClass}"
+			p:url="${jdbc.datasource.url}"
+			p:username="${jdbc.datasource.username}"
+			p:password="${dbc.datasource.password}">
+		</bean>
+	-->
+	
+	<!-- 数据源 Druid连接池 -->
+	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close"
+		p:driverClassName="${jdbc.datasource.driverClass}"
+		p:url="${jdbc.datasource.url}"
+		p:username="${jdbc.datasource.username}"
+		p:password="${jdbc.datasource.password}"
+		p:initialSize="${jdbc.datasource.initialSize}"
+		p:maxActive="${jdbc.datasource.maxActive}"
+		p:minIdle="${jdbc.datasource.minIdle}"
+		p:maxWait="${jdbc.datasource.maxWait}"
+		p:validationQuery="${jdbc.datasource.validationQuery}"
+		p:testOnBorrow="${jdbc.datasource.testOnBorrow}"
+		p:testOnReturn="${jdbc.datasource.testOnReturn}"
+		p:testWhileIdle="${jdbc.datasource.testWhileIdle}"
+		p:timeBetweenEvictionRunsMillis="${jdbc.datasource.timeBetweenEvictionRunsMillis}"
+		p:minEvictableIdleTimeMillis="${jdbc.datasource.minEvictableIdleTimeMillis}"
+		p:maxOpenPreparedStatements="${jdbc.datasource.maxOpenPreparedStatements}"
+		p:removeAbandoned="${jdbc.datasource.removeAbandoned}"
+		p:removeAbandonedTimeout="${jdbc.datasource.removeAbandonedTimeout}"
+		p:logAbandoned="${jdbc.datasource.logAbandoned}"
+		p:filters="${jdbc.datasource.druidFilters}">
+	</bean>
+
+	<!--mapper解析 -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
+		p:dataSource-ref="dataSource"
+		p:typeAliasesPackage="com.icelake.sams.model;com.icelake.sys.model"
+		p:configLocation="classpath:mybatis-config.xml"
+		p:mapperLocations="classpath*:com/icelake/modules/**/*Mapper.xml">
+	</bean>
+	<!-- 声明接口 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+		p:sqlSessionFactoryBeanName="sqlSessionFactoryBean"
+		p:basePackage="com.icelake.modules"
+		p:annotationClass="com.icelake.common.persistence.annotation.MyBatisDAO">
+	</bean>
+
+	<!-- 定义事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+</beans>
