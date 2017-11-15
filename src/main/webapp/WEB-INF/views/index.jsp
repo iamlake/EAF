@@ -125,7 +125,7 @@
 			</div>
 			<!-- 底部 -->
 			<div class="layui-footer footer">
-				<p>copyright @2017 李一鸣　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-small">捐赠作者</a></p>
+				<p>Copyright @2017 Liyiming.neu　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-small">捐赠作者</a></p>
 			</div>
 		</div>
 		

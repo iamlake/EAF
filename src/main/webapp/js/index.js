@@ -142,19 +142,19 @@ layui.config({
 	tab.render();
 
 	//锁屏
-	function lockPage(){
+	function lockPage() {
 		layer.open({
 			title : false,
 			type : 1,
-			content : '	<div class="admin-header-lock" id="lock-box">'+
-							'<div class="admin-header-lock-img"><img src="assets/images/face.jpg"/></div>'+
-							'<div class="admin-header-lock-name" id="lockUserName">沈老师</div>'+
-							'<div class="input_btn">'+
-								'<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'+
-								'<button class="layui-btn" id="unlock">解锁</button>'+
-							'</div>'+
-							'<p>请输入“123456”，否则不会解锁成功哦！！！</p>'+
-						'</div>',
+			content : '	<div class="admin-header-lock" id="lock-box">'
+					+ '<div class="admin-header-lock-img"><img src="assets/images/face.jpg"/></div>'
+					+ '<div class="admin-header-lock-name" id="lockUserName">沈老师</div>'
+					+ '<div class="input_btn">'
+					+ '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'
+					+ '<button class="layui-btn" id="unlock">解锁</button>'
+					+ '</div>'
+					+ '<p>请输入“123456”，否则不会解锁成功哦！！！</p>'
+					+ '</div>',
 			closeBtn : 0,
 			shade : 0.9
 		})
@@ -354,6 +354,7 @@ function addTab(_this){
 
 //捐赠弹窗
 function donation(){
+	/**
 	layer.tab({
 		area : ['260px', '367px'],
 		tab : [{
@@ -364,5 +365,6 @@ function donation(){
 			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='assets/images/alipay.jpg'></div>"
 		}]
 	})
+	*/
 }
 

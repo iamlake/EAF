@@ -1,17 +1,18 @@
-var $;
 layui.config({
 	base : "js/sams/student/"
-}).use(['form','layer','jquery'],function(){
-	var form = layui.form,
-		layer = parent.layer === undefined ? layui.layer : parent.layer,
-		laypage = layui.laypage;
-		$ = layui.jquery;
-		
-		
+}).use(['form','layer','jquery','layedit','laydate'],function(){
+	var form = layui.form, layer = layui.layer, layedit = layui.layedit, laydate = layui.laydate;
+	var $ = layui.$;
+
+	laydate.render({
+		elem : '#txt_birthDate', max : Format(new Date(),"yyyy-MM-dd")
+	});
+	laydate.render({
+		elem : '#txt_startTime'
+	});	
+	
  	var addUserArray = [],addUser;
  	form.on("submit(addUser)",function(data){
- 		layer.alert('当前选中的学生ID是：<br>' + window.sessionStorage.getItem("studentId"));
- 		return;
  		//是否添加过信息
 	 	if(window.sessionStorage.getItem("addUser")){
 	 		addUserArray = JSON.parse(window.sessionStorage.getItem("addUser"));
@@ -56,6 +57,13 @@ layui.config({
         },1000);
  		return false;
  	})
+ 	
+
+	$(document).ready(function() {
+		$(".userGrade").val("");
+		form.render('select');
+		layer.alert('选中数据：' + window.sessionStorage.getItem("studentData"));
+	});		 	
 	
 })
 

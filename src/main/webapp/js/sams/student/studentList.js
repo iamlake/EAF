@@ -79,7 +79,6 @@ layui.config({
 				layer.msg(checkStatus.isAll ? '全选' : '未全选')
 			},
 			doQuery : function() { // 按条件查询
-				alert("按条件查询");
 				$.get("rest/student/findAll", { 
 					'studentNo' : $(".search_stuno").val(), 
 					'studentName' : $(".search_stuname").val()
@@ -91,7 +90,7 @@ layui.config({
 				})
 			},
 			doAdd : function(){ //新增学生
-				window.sessionStorage.setItem("studentId",null);
+				window.sessionStorage.removeItem("studentData");
 				active.forward("添加新生");
 			},
 			forward : function(dialog){
@@ -130,7 +129,7 @@ layui.config({
 		if (obj.event === 'doDetail') {
 			layer.msg('姓名：' + data.studentName + ' 的查看操作');
 		} else if (obj.event === 'doEdit') {
-			window.sessionStorage.setItem("studentId",data.studentId);
+			window.sessionStorage.setItem("studentData",JSON.stringify(data));
 			//layer.alert('当前选中的学生ID是：<br>' + window.sessionStorage.getItem("studentId"));
 			//layer.alert('编辑行：<br>' + JSON.stringify(data))
 			active.forward("编辑学生");			
