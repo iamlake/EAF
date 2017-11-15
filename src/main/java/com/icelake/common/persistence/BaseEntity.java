@@ -15,7 +15,7 @@ public abstract class BaseEntity<T> implements Serializable {
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年11月12日
      */
-    protected boolean isNew = true;
+    protected boolean isNew = false;
 
     public boolean getIsNew() {
         return isNew;
