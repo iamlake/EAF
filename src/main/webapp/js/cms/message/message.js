@@ -52,8 +52,8 @@ layui.config({
             msgHtml += '  <td class="msg_time">'+data[i].askTime+'</td>';
             msgHtml += '  <td class="msg_reply">'+msgReply+'</td>';
             msgHtml += '  <td class="msg_opr">';
-            msgHtml += '    <a class="layui-btn layui-btn-mini layui-btn-normal msg_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>';
-            msgHtml += '    <a class="layui-btn layui-btn-mini reply_msg"><i class="layui-icon">&#xe611;</i> 回复</a>';
+            msgHtml += '    <a class="layui-btn layui-btn-xs layui-btn-normal msg_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>';
+            msgHtml += '    <a class="layui-btn layui-btn-xs reply_msg"><i class="layui-icon">&#xe611;</i> 回复</a>';
             msgHtml += '  </td>';
             msgHtml += '</tr>';
         }

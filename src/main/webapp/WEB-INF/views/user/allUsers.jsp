@@ -50,9 +50,9 @@
 		      </thead>
 		    </table>
 			<script type="text/html" id="barOps">
-		          <a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="detail">查看</a>
-		          <a class="layui-btn layui-btn-mini users_edit" lay-event="edit"><i class="iconfont icon-edit"></i> 编辑</a>
-		          <a class="layui-btn layui-btn-danger layui-btn-mini users_del" lay-event="del"><i class="layui-icon">&#xe640;</i> 删除</a>
+		          <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+		          <a class="layui-btn layui-btn-xs users_edit" lay-event="edit"><i class="iconfont icon-edit"></i> 编辑</a>
+		          <a class="layui-btn layui-btn-danger layui-btn-xs users_del" lay-event="del"><i class="layui-icon">&#xe640;</i> 删除</a>
 			</script>
 		</div>
 	</body>

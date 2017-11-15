@@ -56,7 +56,6 @@ layui.config({
 						align : 'center',
 						toolbar : '#barOps'
 					} ] ],
-			id : 'tableJson',
 			height: 'full-115',
 			skin : 'row', //表格风格
 			even : true,
@@ -67,15 +66,15 @@ layui.config({
 
 		var $ = layui.$, queryResult, active = {
 			getCheckData : function() { // 获取选中数据
-				var checkStatus = table.checkStatus('tableJson'), data = checkStatus.data;
+				var checkStatus = table.checkStatus('table_student'), data = checkStatus.data;
 				layer.alert(JSON.stringify(data));
 			},
 			getCheckLength : function() { // 获取选中数目
-				var checkStatus = table.checkStatus('tableJson'), data = checkStatus.data;
+				var checkStatus = table.checkStatus('table_student'), data = checkStatus.data;
 				layer.msg('选中了：' + data.length + ' 个');
 			},
 			isAll : function() { // 验证是否全选
-				var checkStatus = table.checkStatus('tableJson');
+				var checkStatus = table.checkStatus('table_student');
 				layer.msg(checkStatus.isAll ? '全选' : '未全选')
 			},
 			doQuery : function() { // 按条件查询

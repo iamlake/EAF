@@ -3,6 +3,8 @@ package com.icelake.modules.sys.console.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.icelake.common.web.BaseController;
+
 /**
  * <br>Title: PageController
  * <br>Description: 视图控制器,返回jsp视图给前端
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/page")
-public class PageController {
+public class PageController extends BaseController {
     /**
      * <br>Description:登录页
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)

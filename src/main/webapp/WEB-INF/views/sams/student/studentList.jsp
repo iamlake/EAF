@@ -53,9 +53,9 @@
 		</blockquote>
 		<table class="layui-table" lay-filter="student_list" id="table_student"></table>
 		<script type="text/html" id="barOps">
-			<a class="layui-btn layui-btn-primary layui-btn-mini" lay-event="doDetail">查看</a>
-			<a class="layui-btn layui-btn-mini users_edit" lay-event="doEdit"><i class="iconfont icon-edit"></i> 编辑</a>
-			<a class="layui-btn layui-btn-danger layui-btn-mini users_del" lay-event="doDel"><i class="layui-icon">&#xe640;</i> 删除</a>
+			<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="doDetail">查看</a>
+			<a class="layui-btn layui-btn-xs users_edit" lay-event="doEdit"><i class="iconfont icon-edit"></i> 编辑</a>
+			<a class="layui-btn layui-btn-danger layui-btn-xs users_del" lay-event="doDel"><i class="layui-icon">&#xe640;</i> 删除</a>
 		</script>		
 	</body>
 </html>

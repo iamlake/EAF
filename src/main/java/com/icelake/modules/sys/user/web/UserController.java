@@ -7,9 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.icelake.common.web.BaseController;
+
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController {
     /**
      * <br>Description: 用户登录
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
