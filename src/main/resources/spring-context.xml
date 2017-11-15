@@ -55,7 +55,6 @@
 	<!--mapper解析 -->
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean"
 		p:dataSource-ref="dataSource"
-		p:typeAliasesPackage="com.icelake.sams.model;com.icelake.sys.model"
 		p:configLocation="classpath:mybatis-config.xml"
 		p:mapperLocations="classpath*:com/icelake/modules/**/*Mapper.xml">
 	</bean>
