@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.icelake.modules.sams.student.dao.StudentDAO">
-	<resultMap id="student_map" type="com.icelake.modules.sams.student.entity.Student">
+	<resultMap id="BaseResultMap" type="com.icelake.modules.sams.student.entity.Student">
 		<id column="STUDENT_ID" property="studentId" />
 		<result column="STUDENT_NO" property="studentNo" />
 		<result column="STUDENT_NAME" property="studentName" />
@@ -25,7 +25,7 @@
 		EXT1,EXT2,EXT3
 	</sql>
 	<!-- 查询全部 -->
-	<select id="findList" parameterType="com.icelake.modules.sams.student.entity.Student" resultMap="student_map">
+	<select id="selectByCustomConditions" parameterType="com.icelake.modules.sams.student.entity.Student" resultMap="BaseResultMap">
 		select
 		<include refid="base_column_list" />
 		from SAMS_STUDENT

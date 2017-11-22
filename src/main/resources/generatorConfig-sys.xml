@@ -28,23 +28,23 @@
 		</javaTypeResolver>
 
 		<!-- 生成Entity模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.icelake.sys.model" targetProject="${src}">
+		<javaModelGenerator targetPackage="com.icelake.modules.sys.techcomp.codelist.entity" targetProject="${src}">
 			<!-- 是否在当前路径下新加一层schema,eg：false路径com.icelake.domain"， true:com.icelake.domain".[schemaName] -->
-			<property name="enableSubPackages" value="true" />
+			<property name="enableSubPackages" value="false" />
 			<!-- 是否针对string类型的字段在set的时候进行trim调用 -->
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<!-- 生成Mapper映射文件包名和位置 -->
-		<sqlMapGenerator targetPackage="com.icelake.sys.mapper" targetProject="${mapper}">
+		<sqlMapGenerator targetPackage="com.icelake.modules.sys.techcomp.codelist.mapper" targetProject="${mapper}">
 			<!-- 是否在当前路径下新加一层schema,eg：false路径com.icelake.domain"， true:com.icelake.domain".[schemaName] -->
-			<property name="enableSubPackages" value="true" />
+			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 
 		<!-- 生成DAO接口的包名和位置 -->
-		<javaClientGenerator targetPackage="com.icelake.sys.dao" targetProject="${src}" type="XMLMAPPER">
+		<javaClientGenerator targetPackage="com.icelake.modules.sys.techcomp.codelist.dao" targetProject="${src}" type="XMLMAPPER">
 			<!-- 是否在当前路径下新加一层schema,eg：false路径com.icelake.domain"， true:com.icelake.domain".[schemaName] -->
-			<property name="enableSubPackages" value="true" />
+			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 
 		<!-- 配置表信息，这里每生成一张表，这里需要改变一次对应表名 -->

@@ -2,6 +2,7 @@ package com.icelake.common.generator;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,8 @@ public class MybatisGenerator {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         // 读取配置文件
-        File configFile = new File("config/generatorConfig.xml");
+        URL url = MybatisGenerator.class.getClassLoader().getResource("generatorConfig-sys.xml");
+        File configFile = new File(url.getFile());
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config;
         try {

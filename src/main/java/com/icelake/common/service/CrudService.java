@@ -30,16 +30,7 @@ public abstract class CrudService<D extends CrudDAO<T>, T extends DataEntity<T>>
      * @return
      */
     public T get(String id) {
-        return dao.get(id);
-    }
-
-    /**
-     * 获取单条数据
-     * @param entity
-     * @return
-     */
-    public T get(T entity) {
-        return dao.get(entity);
+        return dao.selectByPrimaryKey(id);
     }
 
     /**
@@ -48,7 +39,7 @@ public abstract class CrudService<D extends CrudDAO<T>, T extends DataEntity<T>>
      * @return
      */
     public List<T> findList(T entity) {
-        return dao.findList(entity);
+        return dao.selectByCustomConditions(entity);
     }
 
     /**
@@ -86,6 +77,6 @@ public abstract class CrudService<D extends CrudDAO<T>, T extends DataEntity<T>>
      */
     @Transactional(readOnly = false)
     public void delete(T entity) {
-        dao.delete(entity);
+        dao.deleteByCustomConditions(entity);
     }
 }

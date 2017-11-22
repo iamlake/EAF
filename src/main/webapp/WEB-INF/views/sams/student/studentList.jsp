@@ -14,7 +14,6 @@
 		<meta name="format-detection" content="telephone=no">
 		<link rel="stylesheet" href="http://at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
 		<link rel="stylesheet" href="assets/css/user.css" media="all" />
-		<script type="text/javascript" src="js/common/utils.js"></script>
 		<script type="text/javascript" src="js/sams/student/studentList.js"></script>
 	</head>
 	<body class="childrenBody">

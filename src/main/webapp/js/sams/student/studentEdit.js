@@ -1,11 +1,10 @@
-layui.config({
-	base : "js/sams/student/"
-}).use(['form','layer','jquery','layedit','laydate'],function(){
-	var form = layui.form, layer = layui.layer, layedit = layui.layedit, laydate = layui.laydate;
+layui.use(['form','layer','jquery','laydate','common'],function(){
+	var form = layui.form, layer = layui.layer, laydate = layui.laydate;
 	var $ = layui.$;
+	var common = layui.common;		
 
 	laydate.render({
-		elem : '#txt_birthDate', max : Format(new Date(),"yyyy-MM-dd")
+		elem : '#txt_birthDate', max : common.dateFormat(new Date(),"yyyy-MM-dd")
 	});
 	laydate.render({
 		elem : '#txt_startTime'
@@ -13,6 +12,8 @@ layui.config({
 	
  	var addUserArray = [],addUser;
  	form.on("submit(addUser)",function(data){
+ 		alert($('.birthDate').val());
+ 		return;
  		//是否添加过信息
 	 	if(window.sessionStorage.getItem("addUser")){
 	 		addUserArray = JSON.parse(window.sessionStorage.getItem("addUser"));
@@ -58,13 +59,22 @@ layui.config({
  		return false;
  	})
  	
-
+ 	var _studentId = null;
+ 	
 	$(document).ready(function() {
-		$(".userGrade").val("");
-		form.render('select');
-		layer.alert('选中数据：' + window.sessionStorage.getItem("studentData"));
+		//form.render('select');
+		var studentData = JSON.parse(window.sessionStorage.getItem("studentData"));
+//		layer.alert('选中数据：' + studentData);
+		common.setData($('.layui-form'), studentData);
+		form.render();
+//        for (var key in studentData) {
+//            alert(key);
+//            alert(studentData[key]);
+//        }
+//		_studentId = studentData["studentId"];
+//		alert('studentData.studentId：' + studentData.studentId);
+//		alert('_studentId：' + _studentId);
 	});		 	
-	
 })
 
 //格式化时间

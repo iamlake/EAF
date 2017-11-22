@@ -18,7 +18,6 @@
 				.layui-form-item .layui-inline{ width:100%; float:none; }
 			}
 		</style>
-		<script type="text/javascript" src="js/common/utils.js"></script>
 		<script type="text/javascript" src="js/sams/student/studentEdit.js"></script>	
 	</head>
 	<body class="childrenBody">
@@ -26,13 +25,13 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">姓名</label>
 				<div class="layui-input-block">
-					<input type="text" class="layui-input studentName" lay-verify="required" placeholder="请输入姓名">
+					<input type="text" class="layui-input studentName" lay-verify="required" placeholder="请输入姓名" name="studentName">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">学号</label>
 				<div class="layui-input-block">
-					<input type="text" class="layui-input studentNo" lay-verify="required" placeholder="请输入学号">
+					<input type="text" class="layui-input studentNo" lay-verify="required" placeholder="请输入学号" name="studentNo">
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -47,13 +46,13 @@
 			    <div class="layui-inline">
 				    <label class="layui-form-label">出生日期</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input birthDate" id="txt_birthDate" lay-verify="required|date" placeholder="请输入出生年月">
+						<input type="text" class="layui-input birthDate" id="txt_birthDate" lay-verify="required|date" placeholder="请输入出生年月" name="birthDate">
 					</div>
 			</div>
 			    <div class="layui-inline">
    				    <label class="layui-form-label">入学时间</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input startTime" id="txt_startTime" lay-verify="required|date" placeholder="请输入入学时间">
+						<input type="text" class="layui-input startTime" id="txt_startTime" lay-verify="required|date" placeholder="请输入入学时间" name="startTime">
 					</div>
 			    </div>
 			</div>

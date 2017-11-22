@@ -2,6 +2,8 @@ package com.icelake.common.persistence;
 
 import java.util.List;
 
+import com.icelake.modules.sys.techcomp.codelist.entity.Codelist;
+
 /**
  * <br>Title: CrudDAO
  * <br>Description: CRUD支持类
@@ -14,50 +16,46 @@ public interface CrudDAO<T> extends BaseDAO {
      * @param id
      * @return
      */
-    public T get(String id);
-
-    /**
-     * 获取单条数据
-     * @param entity
-     * @return
-     */
-    public T get(T entity);
+    public T selectByPrimaryKey(String id);
 
     /**
      * 查询数据列表，如果需要分页，请设置分页对象，如：entity.setPage(new Page<T>());
      * @param entity
      * @return
      */
-    public List<T> findList(T entity);
+    public List<T> selectByCustomConditions(T entity);
 
     /**
-     * 查询所有数据列表
+     * 插入数据
      * @param entity
-     * @return
-     */
-    public List<T> findAllList(T entity);
-
-    /**
-     * 查询所有数据列表
-     * @see public List<T> findAllList(T entity)
+     * @see public int insertSelective(T entity)
      * @return
      */
     @Deprecated
-    public List<T> findAllList();
+    public int insert(T entity);
 
     /**
      * 插入数据
      * @param entity
      * @return
      */
-    public int insert(T entity);
+    public int insertSelective(T entity);
+
+    /**
+     * 更新数据
+     * @param entity
+     * @see public int updateByPrimaryKeySelective(T entity)
+     * @return
+     */
+    @Deprecated
+    public int updateByPrimaryKey(Codelist record);
 
     /**
      * 更新数据
      * @param entity
      * @return
      */
-    public int update(T entity);
+    public int updateByPrimaryKeySelective(T entity);
 
     /**
      * 删除数据（一般为逻辑删除，更新activeFlag字段为-1）
@@ -66,13 +64,13 @@ public interface CrudDAO<T> extends BaseDAO {
      * @return
      */
     @Deprecated
-    public int delete(String id);
+    public int deleteByPrimaryKey(String id);
 
     /**
      * 删除数据（一般为逻辑删除，更新activeFlag字段为-1）
      * @param entity
      * @return
      */
-    public int delete(T entity);
+    public int deleteByCustomConditions(T entity);
 
 }

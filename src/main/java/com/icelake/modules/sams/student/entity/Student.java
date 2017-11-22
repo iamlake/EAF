@@ -1,7 +1,5 @@
 package com.icelake.modules.sams.student.entity;
 
-import java.util.Date;
-
 import com.icelake.common.persistence.DataEntity;
 
 /**
@@ -20,11 +18,11 @@ public class Student extends DataEntity<Student> {
 
     private String sex;
 
-    private Date birthDate;
+    private String birthDate;
 
-    private Date startTime;
+    private String startTime;
 
-    private Date finishTime;
+    private String finishTime;
 
     private String remark;
 
@@ -60,27 +58,27 @@ public class Student extends DataEntity<Student> {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public Date getFinishTime() {
+    public String getFinishTime() {
         return finishTime;
     }
 
-    public void setFinishTime(Date finishTime) {
+    public void setFinishTime(String finishTime) {
         this.finishTime = finishTime;
     }
 

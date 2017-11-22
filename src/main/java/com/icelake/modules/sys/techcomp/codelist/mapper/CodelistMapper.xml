@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icelake.modules.sys.techcomp.codelist.dao.CodelistDAO">
+  <resultMap id="BaseResultMap" type="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    <id column="CODE_ID" property="codeId" />
+    <result column="CODE_VALUE" property="codeValue" />
+    <result column="CODE_VALUE_NAME" property="codeValueName" />
+    <result column="CODE_TYPE" property="codeType" />
+    <result column="CODE_TYPE_NAME" property="codeTypeName" />
+    <result column="CODE_PARENT" property="codeParent" />
+    <result column="CODE_ORDER" property="codeOrder" />
+    <result column="FILTER" property="filter" />
+    <result column="LANGUAGE" property="language" />
+    <result column="REMARK" property="remark" />
+	<result column="ACTIVE_FLAG" property="activeFlag" />
+	<result column="CREATED_BY" property="createdBy" />
+	<result column="CREATION_TIME" property="creationTime" />
+	<result column="MODIFIED_BY" property="modifiedBy" />
+	<result column="MODIFICATION_TIME" property="modificationTime" />
+	<result column="EXT1" property="ext1" />
+	<result column="EXT2" property="ext2" />
+	<result column="EXT3" property="ext3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    CODE_ID, CODE_VALUE, CODE_VALUE_NAME, CODE_TYPE, CODE_TYPE_NAME, CODE_PARENT, CODE_ORDER, 
+    FILTER, LANGUAGE, REMARK, ACTIVE_FLAG, CREATED_BY, CREATION_TIME, MODIFIED_BY, MODIFICATION_TIME, 
+    EXT1, EXT2, EXT3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_CODELIST
+    where CODE_ID = #{codeId,jdbcType=VARCHAR}
+  </select>
+  <!-- 自定义查询 -->
+  <select id="selectByCustomConditions" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_CODELIST
+		where ACTIVE_FLAG = '1'
+		<if test="null!=codeValue and ''!=codeValue">
+			and CODE_VALUE=#{codeValue}
+		</if>
+		<if test="null!=codeValueName and ''!=codeValueName">
+			and CODE_VALUE_NAME like '%${codeValueName}%' 
+		</if>
+		<if test="null!=codeType and ''!=codeType">
+			and CODE_TYPE=#{codeType}
+		</if>
+		<if test="null!=codeTypeName and ''!=codeTypeName">
+			and CODE_TYPE_NAME like '%${codeTypeName}%' 
+		</if>
+		<if test="null!=codeParent and ''!=codeParent">
+			and CODE_PARENT=#{codeParent}
+		</if>
+		<if test="null!=codeOrder and ''!=codeOrder">
+			and CODE_ORDER=#{codeOrder}
+		</if>
+		<if test="null!=filter and ''!=filter">
+			and FILTER=#{filter}
+		</if>
+  </select>  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SYS_CODELIST
+    where CODE_ID = #{codeId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByCustomConditions" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    delete from SYS_CODELIST
+    where CODE_ID = #{codeId,jdbcType=VARCHAR}
+  </delete>  
+  <insert id="insert" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    insert into SYS_CODELIST (CODE_ID, CODE_VALUE, CODE_VALUE_NAME, 
+      CODE_TYPE, CODE_TYPE_NAME, CODE_PARENT, 
+      CODE_ORDER, FILTER, LANGUAGE, 
+      REMARK, ACTIVE_FLAG, CREATED_BY, 
+      CREATION_TIME, MODIFIED_BY, MODIFICATION_TIME, 
+      EXT1, EXT2, EXT3)
+    values (#{codeId,jdbcType=VARCHAR}, #{codeValue,jdbcType=VARCHAR}, #{codeValueName,jdbcType=VARCHAR}, 
+      #{codeType,jdbcType=VARCHAR}, #{codeTypeName,jdbcType=VARCHAR}, #{codeParent,jdbcType=VARCHAR}, 
+      #{codeOrder,jdbcType=VARCHAR}, #{filter,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{activeFlag,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{modifiedBy,jdbcType=VARCHAR}, #{modificationTime,jdbcType=TIMESTAMP}, 
+      #{ext1,jdbcType=VARCHAR}, #{ext2,jdbcType=VARCHAR}, #{ext3,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    insert into SYS_CODELIST
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="codeId != null">
+        CODE_ID,
+      </if>
+      <if test="codeValue != null">
+        CODE_VALUE,
+      </if>
+      <if test="codeValueName != null">
+        CODE_VALUE_NAME,
+      </if>
+      <if test="codeType != null">
+        CODE_TYPE,
+      </if>
+      <if test="codeTypeName != null">
+        CODE_TYPE_NAME,
+      </if>
+      <if test="codeParent != null">
+        CODE_PARENT,
+      </if>
+      <if test="codeOrder != null">
+        CODE_ORDER,
+      </if>
+      <if test="filter != null">
+        FILTER,
+      </if>
+      <if test="language != null">
+        LANGUAGE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="activeFlag != null">
+        ACTIVE_FLAG,
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY,
+      </if>
+      <if test="creationTime != null">
+        CREATION_TIME,
+      </if>
+      <if test="modifiedBy != null">
+        MODIFIED_BY,
+      </if>
+      <if test="modificationTime != null">
+        MODIFICATION_TIME,
+      </if>
+      <if test="ext1 != null">
+        EXT1,
+      </if>
+      <if test="ext2 != null">
+        EXT2,
+      </if>
+      <if test="ext3 != null">
+        EXT3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="codeId != null">
+        #{codeId,jdbcType=VARCHAR},
+      </if>
+      <if test="codeValue != null">
+        #{codeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="codeValueName != null">
+        #{codeValueName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeType != null">
+        #{codeType,jdbcType=VARCHAR},
+      </if>
+      <if test="codeTypeName != null">
+        #{codeTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeParent != null">
+        #{codeParent,jdbcType=VARCHAR},
+      </if>
+      <if test="codeOrder != null">
+        #{codeOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="filter != null">
+        #{filter,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="activeFlag != null">
+        #{activeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedBy != null">
+        #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modificationTime != null">
+        #{modificationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null">
+        #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        #{ext3,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    update SYS_CODELIST
+    <set>
+      <if test="codeValue != null">
+        CODE_VALUE = #{codeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="codeValueName != null">
+        CODE_VALUE_NAME = #{codeValueName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeType != null">
+        CODE_TYPE = #{codeType,jdbcType=VARCHAR},
+      </if>
+      <if test="codeTypeName != null">
+        CODE_TYPE_NAME = #{codeTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="codeParent != null">
+        CODE_PARENT = #{codeParent,jdbcType=VARCHAR},
+      </if>
+      <if test="codeOrder != null">
+        CODE_ORDER = #{codeOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="filter != null">
+        FILTER = #{filter,jdbcType=VARCHAR},
+      </if>
+      <if test="language != null">
+        LANGUAGE = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="activeFlag != null">
+        ACTIVE_FLAG = #{activeFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        CREATION_TIME = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedBy != null">
+        MODIFIED_BY = #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modificationTime != null">
+        MODIFICATION_TIME = #{modificationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ext1 != null">
+        EXT1 = #{ext1,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2 != null">
+        EXT2 = #{ext2,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3 != null">
+        EXT3 = #{ext3,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CODE_ID = #{codeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.icelake.modules.sys.techcomp.codelist.entity.Codelist">
+    update SYS_CODELIST
+    set CODE_VALUE = #{codeValue,jdbcType=VARCHAR},
+      CODE_VALUE_NAME = #{codeValueName,jdbcType=VARCHAR},
+      CODE_TYPE = #{codeType,jdbcType=VARCHAR},
+      CODE_TYPE_NAME = #{codeTypeName,jdbcType=VARCHAR},
+      CODE_PARENT = #{codeParent,jdbcType=VARCHAR},
+      CODE_ORDER = #{codeOrder,jdbcType=VARCHAR},
+      FILTER = #{filter,jdbcType=VARCHAR},
+      LANGUAGE = #{language,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      ACTIVE_FLAG = #{activeFlag,jdbcType=VARCHAR},
+      CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      CREATION_TIME = #{creationTime,jdbcType=TIMESTAMP},
+      MODIFIED_BY = #{modifiedBy,jdbcType=VARCHAR},
+      MODIFICATION_TIME = #{modificationTime,jdbcType=TIMESTAMP},
+      EXT1 = #{ext1,jdbcType=VARCHAR},
+      EXT2 = #{ext2,jdbcType=VARCHAR},
+      EXT3 = #{ext3,jdbcType=VARCHAR}
+    where CODE_ID = #{codeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

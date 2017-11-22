@@ -1,8 +1,6 @@
 package com.icelake.modules.sams.student.web;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.icelake.common.persistence.QueryResult;
 import com.icelake.common.web.BaseController;
 import com.icelake.modules.sams.student.entity.Student;
 import com.icelake.modules.sams.student.service.StudentService;
@@ -47,13 +46,13 @@ public class StudentController extends BaseController {
      */
     @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Object> findAll(Student student) {
-        Map<String, Object> resultMap = new HashMap<>();
+    public QueryResult<Student> findAll(Student student) {
+        QueryResult<Student> queryResult = new QueryResult<>();
         List<Student> list = studentService.findList(student);
-        resultMap.put("code", 0);
-        resultMap.put("msg", "");
-        resultMap.put("count", list.size());
-        resultMap.put("data", list);
-        return resultMap;
+        queryResult.setCode(0);
+        queryResult.setMsg("");
+        queryResult.setCount(list.size());
+        queryResult.setData(list);
+        return queryResult;
     }
 }
