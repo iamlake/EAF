@@ -95,7 +95,8 @@ layui.use(['layer','table','common'],function(){
 			var index = layui.layer.open({
 				title : dialog,
 				type : 2,
-				content : "rest/student/studentedit",
+				//content : "rest/student/studentedit",
+				content : "rest/page/sams_student_studentEdit",
 				success : function(layero, index){
 					setTimeout(function(){
 						layui.layer.tips('点击此处返回学生列表', '.layui-layer-setwin .layui-layer-close', {

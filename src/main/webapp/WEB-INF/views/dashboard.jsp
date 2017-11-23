@@ -41,7 +41,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="rest/student/studentlist">
+			<a href="javascript:;" data-url="rest/page/sams_student_studentList">
 				<div class="panel_icon" style="background-color:#009688;">
 					<i class="layui-icon" data-icon="&#xe613;">&#xe613;</i>
 				</div>

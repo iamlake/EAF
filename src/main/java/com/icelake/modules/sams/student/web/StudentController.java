@@ -27,16 +27,6 @@ public class StudentController extends BaseController {
     @Resource(name = "studentService")
     private StudentService studentService;
 
-    @RequestMapping("/studentlist")
-    public String forwardStudentList() {
-        return "sams/student/studentList";
-    }
-
-    @RequestMapping("/studentedit")
-    public String forwardStudentEdit() {
-        return "sams/student/studentEdit";
-    }
-
     /**
      * <br>Description: 查询学生列表
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)

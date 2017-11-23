@@ -1,6 +1,7 @@
 package com.icelake.modules.sys.console.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.icelake.common.web.BaseController;
@@ -14,6 +15,19 @@ import com.icelake.common.web.BaseController;
 @Controller
 @RequestMapping("/page")
 public class PageController extends BaseController {
+
+    /**
+     * <br>Description: 页面跳转
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年11月23日
+     * @param path
+     * @return
+     */
+    @RequestMapping(value = "/{path}")
+    public String forward(@PathVariable String path) {
+        return path.replace("_", "/");
+    }
+
     /**
      * <br>Description:登录页
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
