@@ -6,7 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * <br>Title: StringUtil
@@ -14,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
  * <br>Author:李一鸣(li-yiming@neusoft.com)
  * <br>Date:2013-6-6
  */
-public class StringUtil extends StringUtils {
+public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     private static final char SEPARATOR = '_';
 
@@ -502,10 +501,10 @@ public class StringUtil extends StringUtils {
      * @return
      */
     public static String getUUID() {
-        return StringUtil.getUUID(true);
+        return StringUtils.getUUID(true);
     }
 
     public static void main(String[] args) {
-        System.out.println(StringUtil.getUUID());
+        System.out.println(StringUtils.getUUID());
     }
 }

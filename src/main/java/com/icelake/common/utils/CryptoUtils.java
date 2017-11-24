@@ -8,12 +8,12 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 /**
- * <br>Title: CryptoUtil
+ * <br>Title: CryptoUtils
  * <br>Description: 加密解密
  * <br>Author:李一鸣(li-yiming@neusoft.com)
  * <br>Date:2013-6-18
  */
-public class CryptoUtil {
+public class CryptoUtils {
 
     private static final String PASSWORD_CRYPT_KEY = "__jDlog_";
 

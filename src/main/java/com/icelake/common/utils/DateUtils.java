@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.commons.lang3.time.DateUtils;
 
 /**
  * <br>
@@ -13,7 +12,8 @@ import org.apache.commons.lang3.time.DateUtils;
  * Author:李一鸣(liyiming.neu@neusoft.com) <br>
  * Date:2016年8月1日
  */
-public class DateUtil extends DateUtils {
+public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
+
     private static String[] parsePatterns = { "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm",
             "yyyy-MM", "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM", "yyyy.MM.dd",
             "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM" };

@@ -57,8 +57,8 @@ public class ExcelHandler {
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public ExcelHandler(String _file, int _ignoreRows) throws IllegalArgumentException,
-            FileNotFoundException, IOException {
+    public ExcelHandler(String _file, int _ignoreRows)
+            throws IllegalArgumentException, FileNotFoundException, IOException {
         in = new BufferedInputStream(new FileInputStream(_file));
         fs = new POIFSFileSystem(in);
         wb = new HSSFWorkbook(fs);
@@ -131,8 +131,8 @@ public class ExcelHandler {
         int rowSize = 0;
         HSSFSheet st = wb.getSheetAt(_sheetIndex);
         HSSFCell cell = null;
-        int rowsCount = _startRowIndex + _rowsCount < st.getLastRowNum() ? _startRowIndex + _rowsCount : st
-                .getLastRowNum() + 1;
+        int rowsCount = _startRowIndex + _rowsCount < st.getLastRowNum() ? _startRowIndex + _rowsCount
+                : st.getLastRowNum() + 1;
         for (int rowIndex = _startRowIndex; rowIndex < rowsCount; rowIndex++) {
             HSSFRow row = st.getRow(rowIndex);
             if (row == null) {
@@ -195,7 +195,7 @@ public class ExcelHandler {
                 //                if (columnIndex == 0 && value.trim().equals("")) {
                 //                    break;
                 //                }
-                values[columnIndex] = StringUtil.rightTrim(value);
+                values[columnIndex] = StringUtils.rightTrim(value);
                 hasValue = true;
             }
             if (hasValue) {
