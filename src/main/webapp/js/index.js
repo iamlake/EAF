@@ -354,17 +354,15 @@ function addTab(_this){
 
 //捐赠弹窗
 function donation(){
-	/**
 	layer.tab({
 		area : ['260px', '367px'],
 		tab : [{
 			title : "微信",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='assets/images/wechat.jpg'></div>"
+			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='assets/images/pay4wechat.jpg'></div>"
 		},{
 			title : "支付宝",
-			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='assets/images/alipay.jpg'></div>"
+			content : "<div style='padding:30px;overflow:hidden;background:#d2d0d0;'><img src='assets/images/pay4alipay.jpg'></div>"
 		}]
 	})
-	*/
 }
 

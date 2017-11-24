@@ -1,10 +1,10 @@
-layui.use(['form','layer','jquery','laydate','common'],function(){
+layui.use(['form','layer','jquery','laydate','eaf'],function(){
 	var form = layui.form, layer = layui.layer, laydate = layui.laydate;
 	var $ = layui.$;
-	var common = layui.common;		
+	var eaf = layui.eaf;		
 
 	laydate.render({
-		elem : '#txt_birthDate', max : common.dateFormat(new Date(),"yyyy-MM-dd")
+		elem : '#txt_birthDate', max : eaf.dateFormat(new Date(),"yyyy-MM-dd")
 	});
 	laydate.render({
 		elem : '#txt_startTime'
@@ -12,7 +12,6 @@ layui.use(['form','layer','jquery','laydate','common'],function(){
 	
  	var addUserArray = [],addUser;
  	form.on("submit(addUser)",function(data){
- 		alert($('.birthDate').val());
  		return;
  		//是否添加过信息
 	 	if(window.sessionStorage.getItem("addUser")){
@@ -62,18 +61,11 @@ layui.use(['form','layer','jquery','laydate','common'],function(){
  	var _studentId = null;
  	
 	$(document).ready(function() {
-		//form.render('select');
 		var studentData = JSON.parse(window.sessionStorage.getItem("studentData"));
-//		layer.alert('选中数据：' + studentData);
-		common.setData($('.layui-form'), studentData);
+//		layer.alert('选中数据：' + window.sessionStorage.getItem("studentData"));
+		eaf.setData($('.layui-form'), studentData);
 		form.render();
-//        for (var key in studentData) {
-//            alert(key);
-//            alert(studentData[key]);
-//        }
-//		_studentId = studentData["studentId"];
-//		alert('studentData.studentId：' + studentData.studentId);
-//		alert('_studentId：' + _studentId);
+//		layer.alert('读取数据：' + JSON.stringify(eaf.getBinding($('.layui-form'))));
 	});		 	
 })
 

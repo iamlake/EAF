@@ -61,11 +61,11 @@
 					<div class="layui-input-block">
 						<input type="checkbox"  checked="" lay-skin="switch" lay-text="启用|停用">
 					</div>
-			</div>			
+			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">备注</label>
 				<div class="layui-input-block">
-					<textarea placeholder="请输入备注信息" class="layui-textarea remark"></textarea>
+					<textarea placeholder="请输入备注信息" class="layui-textarea remark" name="remark"></textarea>
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -74,6 +74,7 @@
 					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 			    </div>
 			</div>
+			<input type="hidden"  name="studentId">
 		</form>
 	</body>
 </html>

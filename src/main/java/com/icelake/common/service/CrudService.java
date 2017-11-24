@@ -62,13 +62,13 @@ public abstract class CrudService<D extends CrudDAO<T>, T extends DataEntity<T>>
     @Transactional(readOnly = false)
     public void save(T entity) {
         //TODO 自动判断插入或修改
-        //        if (entity.getIsNewRecord()) {
-        //            entity.preInsert();
-        //            dao.insert(entity);
-        //        } else {
-        //            entity.preUpdate();
-        //            dao.update(entity);
-        //        }
+        if (entity.getIsNew()) {
+            entity.preInsert();
+            dao.insertSelective(entity);
+        } else {
+            entity.preUpdate();
+            dao.updateByPrimaryKeySelective(entity);
+        }
     }
 
     /**

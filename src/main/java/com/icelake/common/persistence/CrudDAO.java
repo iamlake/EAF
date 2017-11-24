@@ -2,8 +2,6 @@ package com.icelake.common.persistence;
 
 import java.util.List;
 
-import com.icelake.modules.sys.techcomp.codelist.entity.Codelist;
-
 /**
  * <br>Title: CrudDAO
  * <br>Description: CRUD支持类
@@ -48,7 +46,7 @@ public interface CrudDAO<T> extends BaseDAO {
      * @return
      */
     @Deprecated
-    public int updateByPrimaryKey(Codelist record);
+    public int updateByPrimaryKey(T entity);
 
     /**
      * 更新数据

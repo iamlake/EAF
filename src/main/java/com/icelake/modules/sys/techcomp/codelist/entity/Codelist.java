@@ -1,6 +1,9 @@
 package com.icelake.modules.sys.techcomp.codelist.entity;
 
+import java.util.Date;
+
 import com.icelake.common.persistence.DataEntity;
+import com.icelake.common.utils.StringUtils;
 
 /**
  * <br>Title: Codelist
@@ -110,10 +113,22 @@ public class Codelist extends DataEntity<Codelist> {
         this.remark = remark == null ? null : remark.trim();
     }
 
+    @Override
+    public void preInsert() {
+        this.setCodeId(StringUtils.getUUID());
+        this.setCreationTime(new Date());
+    }
+
+    @Override
+    public void preUpdate() {
+        this.setModificationTime(new Date());
+    }
+
     /**
      * <br>Description: serialVersionUID
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年11月15日
      */
     private static final long serialVersionUID = 1L;
+
 }

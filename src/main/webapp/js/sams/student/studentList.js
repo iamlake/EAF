@@ -1,7 +1,7 @@
-layui.use(['layer','table','common'],function(){
+layui.use(['layer','table','eaf'],function(){
 	var layer = parent.layer === undefined ? layui.layer : parent.layer,
 		table = layui.table;
-	var common = layui.common;	
+	var eaf = layui.eaf;	
 	
 	var tableJson ={
 		elem : '#table_student',
@@ -31,19 +31,19 @@ layui.use(['layer','table','common'],function(){
 				field : 'birthDate',
 				title : '出生日期',
 				width : 150
-				//,templet : '<div>{{ layui.common.dateFormat(d.birthDate,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.eaf.dateFormat(d.birthDate,"yyyy-MM-dd")}}</div>'
 			},
 			{
 				field : 'startTime',
 				title : '入学时间',
 				width : 150
-				//,templet : '<div>{{ layui.common.dateFormat(d.startTime,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.eaf.dateFormat(d.startTime,"yyyy-MM-dd")}}</div>'
 			},
 			{
 				field : 'finishTime',
 				title : '毕业时间',
 				width : 150
-				//,templet : '<div>{{ layui.common.dateFormat(d.finishTime,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.eaf.dateFormat(d.finishTime,"yyyy-MM-dd")}}</div>'
 			}, {
 				field : 'remark',
 				title : '备注',
@@ -95,7 +95,6 @@ layui.use(['layer','table','common'],function(){
 			var index = layui.layer.open({
 				title : dialog,
 				type : 2,
-				//content : "rest/student/studentedit",
 				content : "rest/page/sams_student_studentEdit",
 				success : function(layero, index){
 					setTimeout(function(){

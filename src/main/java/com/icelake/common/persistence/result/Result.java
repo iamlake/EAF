@@ -1,17 +1,22 @@
-package com.icelake.common.persistence;
+package com.icelake.common.persistence.result;
 
 import java.io.Serializable;
-import java.util.List;
 
-public class QueryResult<T> implements Serializable {
+public class Result implements Serializable {
 
+    /**
+     * <br>Description: 状态码
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年11月24日
+     */
     private int code;
 
+    /**
+     * <br>Description: 返回信息
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年11月24日
+     */
     private String msg;
-
-    private int count;
-
-    private List<T> data;
 
     public int getCode() {
         return code;
@@ -29,26 +34,10 @@ public class QueryResult<T> implements Serializable {
         this.msg = msg;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public List<T> getData() {
-        return data;
-    }
-
-    public void setData(List<T> data) {
-        this.data = data;
-    }
-
     /**
      * <br>Description: serialVersionUID
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
-     * <br>Date:2017年11月16日
+     * <br>Date:2017年11月24日
      */
     private static final long serialVersionUID = 1L;
 }

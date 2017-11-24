@@ -1,6 +1,9 @@
 package com.icelake.modules.sams.student.entity;
 
+import java.util.Date;
+
 import com.icelake.common.persistence.DataEntity;
+import com.icelake.common.utils.StringUtils;
 
 /**
  * <br>Title:Student
@@ -88,6 +91,17 @@ public class Student extends DataEntity<Student> {
 
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
+    }
+
+    @Override
+    public void preInsert() {
+        this.setStudentId(StringUtils.getUUID());
+        this.setCreationTime(new Date());
+    }
+
+    @Override
+    public void preUpdate() {
+        this.setModificationTime(new Date());
     }
 
     /**
