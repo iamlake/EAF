@@ -9,62 +9,45 @@ layui.use(['form','layer','jquery','laydate','eaf'],function(){
 	laydate.render({
 		elem : '#txt_startTime'
 	});	
-	
- 	var addUserArray = [],addUser;
- 	form.on("submit(addUser)",function(data){
- 		return;
- 		//是否添加过信息
-	 	if(window.sessionStorage.getItem("addUser")){
-	 		addUserArray = JSON.parse(window.sessionStorage.getItem("addUser"));
-	 	}
 
-	 	var userStatus,userGrade,userEndTime;
-	 	//会员等级
-	 	if(data.field.userGrade == '0'){
- 			userGrade = "注册会员";
- 		}else if(data.field.userGrade == '1'){
- 			userGrade = "中级会员";
- 		}else if(data.field.userGrade == '2'){
- 			userGrade = "高级会员";
- 		}else if(data.field.userGrade == '3'){
- 			userGrade = "超级会员";
- 		}
- 		//会员状态
- 		if(data.field.userStatus == '0'){
- 			userStatus = "正常使用";
- 		}else if(data.field.userStatus == '1'){
- 			userStatus = "限制用户";
- 		}
+ 	form.on("submit(save)", function(data) {
+		var jsonDataExt = 'isNew:' + isNew;
+		var formData = eaf.getBinding($('.layui-form'), jsonDataExt);
 
- 		addUser = '{"usersId":"'+ new Date().getTime() +'",';//id
- 		addUser += '"userName":"'+ $(".userName").val() +'",';  //登录名
- 		addUser += '"userEmail":"'+ $(".userEmail").val() +'",';	 //邮箱
- 		addUser += '"userSex":"'+ data.field.sex +'",'; //性别
- 		addUser += '"userStatus":"'+ userStatus +'",'; //会员等级
- 		addUser += '"userGrade":"'+ userGrade +'",'; //会员状态
- 		addUser += '"userEndTime":"'+ formatTime(new Date()) +'"}';  //登录时间
- 		console.log(addUser);
- 		addUserArray.unshift(JSON.parse(addUser));
- 		window.sessionStorage.setItem("addUser",JSON.stringify(addUserArray));
- 		//弹出loading
- 		var index = top.layer.msg('数据提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            top.layer.close(index);
-			top.layer.msg("用户添加成功！");
- 			layer.closeAll("iframe");
-	 		//刷新父页面
-	 		parent.location.reload();
-        },1000);
- 		return false;
- 	})
+		// 弹出loading
+		var index = top.layer.msg('数据提交中，请稍候…', {
+			icon : 16,
+			time : 500,
+			shade : 0.8
+		}, function() {
+			$.post("rest/student/save", formData, function(data) {
+				// alert("Data Loaded: " + data);
+				top.layer.close(index);
+				top.layer.msg("操作成功！", {
+					icon : 1,
+					time : 800
+				// 0.5秒关闭（如果不配置，默认是3秒）
+				}, function() {
+					layer.closeAll("iframe");
+					// 刷新父页面
+					parent.location.reload();
+				});
+			});
+		});
+		return false;
+	})
  	
- 	var _studentId = null;
+ 	var isNew = false;
  	
 	$(document).ready(function() {
 		var studentData = JSON.parse(window.sessionStorage.getItem("studentData"));
+		if(null == studentData){
+			isNew = true;
+		}else{
+			eaf.setData($('.layui-form'), studentData);
+			form.render();
+		}
 //		layer.alert('选中数据：' + window.sessionStorage.getItem("studentData"));
-		eaf.setData($('.layui-form'), studentData);
-		form.render();
 //		layer.alert('读取数据：' + JSON.stringify(eaf.getBinding($('.layui-form'))));
 	});		 	
 })

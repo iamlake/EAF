@@ -44,6 +44,7 @@ public class StudentController extends BaseController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @ResponseBody
     public Result save(Student student) {
         JSONResult result = new JSONResult();
         studentService.save(student);

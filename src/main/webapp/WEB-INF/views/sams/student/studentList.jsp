@@ -16,7 +16,7 @@
 		<style type="text/css">
 			.layui-table, .layui-table th {
 				text-align: center;
-			}		
+			}
 			.layui-table th {
 				font-weight: bold;
 			}
