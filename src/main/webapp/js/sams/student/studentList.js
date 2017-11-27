@@ -60,21 +60,23 @@ layui.use(['layer','table','eaf'],function(){
 		even : true,
 		page : true, //是否显示分页
 		limits : [ 5, 10, 30, 100 ],
-		limit : 2 //每页默认显示的数量
+		limit : 10 //每页默认显示的数量
 	};
 
 	var $ = layui.$, queryResult, active = {
 		getCheckData : function() { // 获取选中数据
 			var checkStatus = table.checkStatus('table_student'), data = checkStatus.data;
-			layer.alert(JSON.stringify(data));
+			return data;
 		},
 		getCheckLength : function() { // 获取选中数目
 			var checkStatus = table.checkStatus('table_student'), data = checkStatus.data;
-			layer.msg('选中了：' + data.length + ' 个');
+			//layer.msg('选中了：' + data.length + ' 个');
+			return data.length;
 		},
 		isAll : function() { // 验证是否全选
 			var checkStatus = table.checkStatus('table_student');
 			layer.msg(checkStatus.isAll ? '全选' : '未全选')
+			return checkStatus.isAll;
 		},
 		doQuery : function() { // 按条件查询
 			$.get("rest/student", { 
@@ -85,9 +87,17 @@ layui.use(['layer','table','eaf'],function(){
 				table.render(tableJson);
 			})
 		},
-		doAdd : function(){ //新增学生
+		doAdd : function() { // 新增学生
 			window.sessionStorage.removeItem("studentData");
 			active.forward("添加新生");
+		},
+		doDelBatch : function() {// 批量删除
+			var data = active.getCheckData();
+			if (data.length < 1) {
+				layer.alert('请至少选择一条记录！', { icon : 0 });
+			}else{
+				
+			}
 		},
 		forward : function(dialog){
 			var index = layui.layer.open({
@@ -130,23 +140,26 @@ layui.use(['layer','table','eaf'],function(){
 			//layer.alert('编辑行：<br>' + JSON.stringify(data))
 			active.forward("编辑学生");
 		} else if (obj.event === 'doDel') {
-			layer.confirm('确定要删除这条记录吗？', function(index) {
+			layer.confirm('确定要删除这条记录吗？', {
+				icon : 3,
+				title : '提示'
+			}, function(index) {
 				$.ajax({
 					url : 'rest/student/' + data.studentId,
 					type : 'POST',
-				    data : {  
-				        _method : "delete"
-				        },					
-				    success: function(result) {
-				    	layer.close(index);
-				    	layer.msg(result.msg, {
+					data : {
+						_method : "delete"
+					},
+					success : function(result) {
+						layer.close(index);
+						layer.msg(result.msg, {
 							icon : 1,
 							time : 500
 						}, function() {
 							active.doQuery();
-						});	
-				    }
-				});	
+						});
+					}
+				});
 			});
 		}
 	});
