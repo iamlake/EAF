@@ -82,8 +82,6 @@ layui.use(['layer','table','eaf'],function(){
 				'studentName' : $(".search_stuname").val()
 			},function(data) {
 				tableJson.data = data.data;
-				//alert(JSON.stringify(data));
-				//top.layer.msg(JSON.stringify(tableJson));
 				table.render(tableJson);
 			})
 		},
@@ -130,7 +128,7 @@ layui.use(['layer','table','eaf'],function(){
 			window.sessionStorage.setItem("studentData", JSON.stringify(data));
 			//layer.alert('当前选中的学生ID是：<br>' + window.sessionStorage.getItem("studentId"));
 			//layer.alert('编辑行：<br>' + JSON.stringify(data))
-			active.forward("编辑学生");			
+			active.forward("编辑学生");
 		} else if (obj.event === 'doDel') {
 			layer.confirm('确定要删除当前行吗？', function(index) {
 				obj.del();
