@@ -1,12 +1,13 @@
 package com.icelake.modules.sams.student.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.icelake.common.persistence.result.JSONResult;
@@ -23,7 +24,6 @@ import com.icelake.modules.sams.student.service.StudentService;
  * <br>Date:2017年10月25日
  */
 @RestController
-@RequestMapping("/student")
 public class StudentController extends BaseController {
 
     @Resource(name = "studentService")
@@ -36,25 +36,56 @@ public class StudentController extends BaseController {
      * @param student
      * @return
      */
-    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
-    public Result findAllStudents(Student student) {
+    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    public Result findStudents(Student student) {
         List<Student> list = studentService.findList(student);
         return new QueryResult<Student>(0, "", list, list.size());
     }
 
     /**
-     * <br>Description: 新增或保存学生信息
+     * <br>Description: 查询学生信息
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年11月27日
+     * @param studentId
+     * @return
+     */
+    @RequestMapping(value = "/student/{id}", method = RequestMethod.GET)
+    public Result findStudentById(@PathVariable("id") String studentId) {
+        List<Student> list = new ArrayList<>();
+        list.add(studentService.get(studentId));
+        return new QueryResult<Student>(0, "", list, list.size());
+    }
+
+    /**
+     * <br>Description: 新增学生信息
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年11月27日
      * @param student
      * @return
      */
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/student", method = RequestMethod.POST)
     public Result saveStudent(Student student) {
         JSONResult result = new JSONResult();
         studentService.save(student);
         result.setCode(0);
-        result.setMsg(student.getIsNew() ? "添加成功！" : "修改成功！");
+        result.setMsg("添加成功！");
+        result.getParameters().put("", "");
+        return result;
+    }
+
+    /**
+     * <br>Description: 修改学生信息
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年11月27日
+     * @param student
+     * @return
+     */
+    @RequestMapping(value = "/student", method = RequestMethod.PUT)
+    public Result updateStudent(Student student) {
+        JSONResult result = new JSONResult();
+        studentService.save(student);
+        result.setCode(0);
+        result.setMsg("修改成功！");
         result.getParameters().put("", "");
         return result;
     }
@@ -66,8 +97,8 @@ public class StudentController extends BaseController {
      * @param student
      * @return
      */
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public Result deleteStudents(@RequestParam(value = "studentId") String studentId) {
+    @RequestMapping(value = "/student/{id}", method = RequestMethod.DELETE)
+    public Result deleteStudentById(@PathVariable("id") String studentId) {
         JSONResult result = new JSONResult();
         studentService.delete(studentId);
         result.setCode(0);

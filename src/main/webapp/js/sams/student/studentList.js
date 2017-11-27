@@ -77,7 +77,7 @@ layui.use(['layer','table','eaf'],function(){
 			layer.msg(checkStatus.isAll ? '全选' : '未全选')
 		},
 		doQuery : function() { // 按条件查询
-			$.get("rest/student/findAll", { 
+			$.get("rest/student", { 
 				'studentNo' : $(".search_stuno").val(), 
 				'studentName' : $(".search_stuname").val()
 			},function(result) {
@@ -132,11 +132,10 @@ layui.use(['layer','table','eaf'],function(){
 		} else if (obj.event === 'doDel') {
 			layer.confirm('确定要删除当前行吗？', function(index) {
 				$.ajax({
-					url : 'rest/student/delete',
+					url : 'rest/student/' + data.studentId,
 					type : 'POST',
 				    data : {  
-				        studentId : data.studentId,  
-				        _method : "delete",  
+				        _method : "delete"
 				        },					
 				    success: function(result) {
 				    	layer.close(index);
