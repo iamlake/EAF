@@ -19,9 +19,9 @@ layui.use(['form','layer','jquery','laydate','eaf'],function(){
 			time : 500,
 			shade : 0.8
 		}, function() {
-			$.post("rest/student/save", formData, function(data) {
+			$.post("rest/student/save", formData, function(result) {
 				top.layer.close(index);
-				top.layer.msg(data.msg, {
+				top.layer.msg(result.msg, {
 					icon : 1,
 					time : 800
 				// 0.5秒关闭（如果不配置，默认是3秒）

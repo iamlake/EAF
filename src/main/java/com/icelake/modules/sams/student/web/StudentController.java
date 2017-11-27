@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.icelake.common.persistence.result.JSONResult;
@@ -66,11 +67,11 @@ public class StudentController extends BaseController {
      * @return
      */
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public Result deleteStudents(Student student) {
+    public Result deleteStudents(@RequestParam(value = "studentId") String studentId) {
         JSONResult result = new JSONResult();
-        studentService.save(student);
+        studentService.delete(studentId);
         result.setCode(0);
-        result.setMsg(student.getIsNew() ? "添加成功！" : "修改成功！");
+        result.setMsg("删除成功！");
         result.getParameters().put("", "");
         return result;
     }

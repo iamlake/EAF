@@ -76,7 +76,7 @@ public abstract class CrudService<D extends CrudDAO<T>, T extends DataEntity<T>>
      * @param entity
      */
     @Transactional(readOnly = false)
-    public void delete(T entity) {
-        dao.deleteByCustomConditions(entity);
+    public void delete(String id) {
+        dao.deleteByPrimaryKey(id);
     }
 }

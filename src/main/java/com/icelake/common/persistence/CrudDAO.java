@@ -61,7 +61,6 @@ public interface CrudDAO<T> extends BaseDAO {
      * @see public int delete(T entity)
      * @return
      */
-    @Deprecated
     public int deleteByPrimaryKey(String id);
 
     /**

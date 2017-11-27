@@ -80,8 +80,8 @@ layui.use(['layer','table','eaf'],function(){
 			$.get("rest/student/findAll", { 
 				'studentNo' : $(".search_stuno").val(), 
 				'studentName' : $(".search_stuname").val()
-			},function(data) {
-				tableJson.data = data.data;
+			},function(result) {
+				tableJson.data = result.data;
 				table.render(tableJson);
 			})
 		},
@@ -131,8 +131,23 @@ layui.use(['layer','table','eaf'],function(){
 			active.forward("编辑学生");
 		} else if (obj.event === 'doDel') {
 			layer.confirm('确定要删除当前行吗？', function(index) {
-				obj.del();
-				layer.close(index);
+				$.ajax({
+					url : 'rest/student/delete',
+					type : 'POST',
+				    data : {  
+				        studentId : data.studentId,  
+				        _method : "delete",  
+				        },					
+				    success: function(result) {
+				    	layer.close(index);
+				    	layer.msg(result.msg, {
+							icon : 1,
+							time : 500
+						}, function() {
+							active.doQuery();
+						});	
+				    }
+				});	
 			});
 		}
 	});
@@ -141,4 +156,5 @@ layui.use(['layer','table','eaf'],function(){
         var type = $(this).data('type');
         active[type] ? active[type].call(this) : '';
 	});
+    
 })
