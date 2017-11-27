@@ -12,7 +12,7 @@ layui.use(['form','layer','jquery','laydate','eaf'],function(){
 
  	form.on("submit(save)", function(data) {
  		var ext = 'isNew:' + isNew;
-		if (isNew) {
+		if (!isNew) {
 			ext += ';_method:put';
 		}
 		var formData = eaf.getBinding($('.layui-form'), ext);

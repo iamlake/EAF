@@ -60,7 +60,7 @@ layui.use(['layer','table','eaf'],function(){
 		even : true,
 		page : true, //是否显示分页
 		limits : [ 5, 10, 30, 100 ],
-		limit : 10 //每页默认显示的数量
+		limit : 2 //每页默认显示的数量
 	};
 
 	var $ = layui.$, queryResult, active = {
@@ -130,7 +130,7 @@ layui.use(['layer','table','eaf'],function(){
 			//layer.alert('编辑行：<br>' + JSON.stringify(data))
 			active.forward("编辑学生");
 		} else if (obj.event === 'doDel') {
-			layer.confirm('确定要删除当前行吗？', function(index) {
+			layer.confirm('确定要删除这条记录吗？', function(index) {
 				$.ajax({
 					url : 'rest/student/' + data.studentId,
 					type : 'POST',
