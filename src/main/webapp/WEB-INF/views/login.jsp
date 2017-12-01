@@ -5,7 +5,7 @@
 		<%@ include file="/WEB-INF/views/base/base.jsp" %>
 		<base href="<%=basePath%>">
 		<meta charset="utf-8">
-		<title>登录--layui后台管理模板</title>
+		<title>登录—EAF后台管理模板</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,7 +22,7 @@
 		</video>
 		<div class="video_mask"></div>
 		<div class="login">
-		    <h1>SAMS-管理登录</h1>
+		    <h1>SAMS系统登录</h1>
 		    <form class="layui-form" action="rest/user/login" method="post">
 		    	<div class="layui-form-item">
 					<input class="layui-input" name="username" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">

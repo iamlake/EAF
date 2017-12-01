@@ -4,7 +4,7 @@
 	<head>
 		<%@ include file="/WEB-INF/views/base/base.jsp" %>
 		<base href="<%=basePath%>">
-		<title>layui后台管理模板</title>
+		<title>EAF后台管理模板</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -12,7 +12,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="format-detection" content="telephone=no">
-		<link rel="icon" href="images/favicon.ico">
 		<link rel="stylesheet" href="http://at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
 		<link rel="stylesheet" href="assets/css/main.css" media="all" />
 		<script type="text/javascript" src="js/leftNav.js"></script>
@@ -23,7 +22,7 @@
 			<!-- 顶部 -->
 			<div class="layui-header header">
 				<div class="layui-main">
-					<a href="#" class="logo">layui后台管理</a>
+					<a href="#" class="logo">EAF后台管理</a>
 					<!-- 显示/隐藏菜单 -->
 					<a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
 					<!-- 搜索 -->

@@ -1,10 +1,10 @@
-layui.use(['form','layer','jquery','laydate','eaf'],function(){
-	var form = layui.form, layer = layui.layer, laydate = layui.laydate;
+layui.use(['form','layer','jquery','laydate','util','eaf'],function(){
+	var form = layui.form, layer = layui.layer, laydate = layui.laydate, util = layui.util;
 	var $ = layui.$, eaf = layui.eaf;
 	var isNew = false;
 
 	laydate.render({
-		elem : '#txt_birthDate', max : eaf.dateFormat(new Date(),"yyyy-MM-dd")
+		elem : '#txt_birthDate', max : util.toDateString(new Date(),"yyyy-MM-dd")
 	});
 	laydate.render({
 		elem : '#txt_startTime'
