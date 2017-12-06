@@ -13,24 +13,6 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="format-detection" content="telephone=no">
 		<link rel="stylesheet" href="http://at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
-		<style type="text/css">
-			.layui-table, .layui-table th {
-				text-align: center;
-			}
-			
-			.layui-table th {
-				font-weight: bold;
-			}
-			
-			.layui-table[lay-skin=row] td, .layui-table[lay-skin=row] th {
-				border-width: 0 1px 1 0;
-			}
-			
-			.layui-table-cell .layui-form-checkbox[lay-skin="primary"] {
-				top: 50%;
-				transform: translateY(-50%);
-			}
-		</style>
 		<script type="text/javascript" src="js/sams/student/studentList.js"></script>
 	</head>
 	<body class="childrenBody">

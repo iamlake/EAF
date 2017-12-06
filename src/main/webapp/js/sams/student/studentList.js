@@ -103,6 +103,7 @@ layui.use(['layer','table','eaf'],function(){
 			var index = layui.layer.open({
 				title : dialog,
 				type : 2,
+				maxmin: true,
 				content : "rest/page/sams_student_studentEdit",
 				success : function(layero, index){
 					setTimeout(function(){
