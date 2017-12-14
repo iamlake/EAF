@@ -31,8 +31,6 @@ public class Codelist extends DataEntity<Codelist> {
 
     private String language;
 
-    private String remark;
-
     public String getCodeId() {
         return codeId;
     }
@@ -103,14 +101,6 @@ public class Codelist extends DataEntity<Codelist> {
 
     public void setLanguage(String language) {
         this.language = language == null ? null : language.trim();
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
     }
 
     @Override

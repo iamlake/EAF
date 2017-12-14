@@ -10,6 +10,8 @@ import java.util.Date;
  */
 public abstract class DataEntity<T> extends BaseEntity<T> {
 
+    private String remark;
+
     protected String activeFlag;
 
     protected String createdBy;
@@ -25,6 +27,14 @@ public abstract class DataEntity<T> extends BaseEntity<T> {
     protected String ext2;
 
     protected String ext3;
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
 
     public String getActiveFlag() {
         return activeFlag;

@@ -26,7 +26,7 @@ import com.icelake.modules.sams.student.service.StudentService;
 @RestController
 public class StudentController extends BaseController {
 
-    @Resource(name = "studentService")
+    @Resource
     private StudentService studentService;
 
     /**

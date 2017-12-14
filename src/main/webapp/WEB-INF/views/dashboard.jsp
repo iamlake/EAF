@@ -5,7 +5,7 @@
 	<%@ include file="/WEB-INF/views/base/base.jsp" %>
 	<base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>首页--layui后台管理模板</title>
+	<title>首页——EAF后台管理模板</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -87,8 +87,8 @@
 		</div>
 	</div>
 	<blockquote class="layui-elem-quote explain">
-		<p>本模板基于Layui实现，支持除LayIM外所有的Layui组件。<a href="http://layim.layui.com/" target="_blank" class="layui-btn layui-btn-xs">前往获取LayIM授权</a><a href="https://git.oschina.net/layuicms/layuicms" target="_blank" class="layui-btn layui-btn-xs layui-btn-danger">码云下载</a><a href="https://github.com/BrotherMa/layuiCMS" target="_blank" class="layui-btn layui-btn-xs layui-btn-danger">GitHub下载</a>　<span style="color:#1E9FFF;">郑重提示：网站所有数据均为静态数据，无数据库，除打开的窗口和部分小改动外所有操作刷新后无效，关闭窗口或清除缓存后，所有操作无效，请知悉</span></p>
-		<p>开发文档地址：<a class="layui-btn layui-btn-xs" target="_blank" href="http://www.layui.com/doc">点此跳转</a> <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="http://fly.layui.com/case/u/3198216">我要点赞</a>　<span style="color:#f00;">注：本框架未引入任何第三方组件（天气信息除外），单纯的layui+js实现的各种功能【本框架仅作为学习交流使用，如需用作商业用途，请联系作者授权，谢谢】</span></p>
+		<p>本模板基于Layui实现，支持除LayIM外所有的Layui组件。<a href="http://layim.layui.com/" target="_blank" class="layui-btn layui-btn-xs">前往获取LayIM授权</a><a href="#" target="_blank" class="layui-btn layui-btn-xs layui-btn-danger">码云下载</a><a href="https://github.com/iamlake/EAF" target="_blank" class="layui-btn layui-btn-xs layui-btn-danger">GitHub下载</a>　<span style="color:#1E9FFF;">郑重提示：当前为BETA版，功能尚在完善中，仅供学习和交流使用，请了解</span></p>
+		<p>开发文档地址：<a class="layui-btn layui-btn-xs" target="_blank" href="http://www.layui.com/doc">点此跳转</a> <a class="layui-btn layui-btn-xs layui-btn-danger" target="_blank" href="#">我要点赞</a>　<span style="color:#f00;">注：前端框架未引入任何第三方组件（天气信息除外），单纯的layui+js实现的各种功能</span></p>
 		<!-- 
 		<p>技术交流QQ群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=8b7dd3ea73528c1e46c5d4e522426d60deed355caefdf481c1eacdd1b7b73bfd"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="layui后台管理模版cms" title="layuicms后台管理模版"></a>（添加时请注明来自本框架）</p>
 		 -->
@@ -97,23 +97,25 @@
 		<div class="sysNotice col">
 			<blockquote class="layui-elem-quote title">更新日志</blockquote>
 			<div class="layui-elem-quote layui-quote-nm">
-				<h3># v1.0.1（优化） - 2017-06-25</h3>
-				<p>* 修改刚进入页面无任何操作时按回车键提示“请输入解锁密码！”</p>
-				<p>* 优化关闭弹窗按钮的提示信息位置问题【可能是因为加载速度的原因，造成这个问题，所以将提示信息做了一个延时】</p>
-				<p>* “个人资料”提供修改功能</p>
-				<p>* 顶部天气信息自动判断位置【忘记之前是怎么想的做成北京的了，可能是我在大首都吧，哈哈。。。】</p>
-				<p>* 优化“用户列表”无法查询到新添加的用户【竟然是因为我把key值写错了，该死。。。】</p>
-				<p>* 将左侧菜单做成json方式调用，而不是js调用，方便开发使用。同时添加了参数配置和非窗口模式打开的判断，【如登录页面】</p>
-				<p>* 优化部分页面样式问题</p>
-				<p>* 优化添加窗时如果导航不存在图标无法添加成功</p>
+				<h3># v0.0.1（优化） - 2017-11-15</h3>
+				<p style="color:#f00;">* 技术选型说明：</p>
+				<p>* 1、后端</p>
+				<p>* 【核心框架】Spring Framework 4.x【安全框架】Apache Shiro 1.3【视图框架】Spring MVC 4.x</p>
+				<p>* 【持久层框架】MyBatis 3.2【数据库连接池】Alibaba Druid 1.0【缓存框架】Ehcache 2.6</p>
+				<p>* 【日志管理】SLF4J 1.7、Log4j 1.2【分页插件】pagehelper 5.1.2</p>
+				<p>* 【代码生成器】MyBatis-generator 1.3.5</p>
+				<p>* 2、前端</p>
+				<p>* 【JS框架】LayUI 2.2.4、jQuery 1.9</p>
+				<p>* 【CSS框架】Twitter Bootstrap 2.3.1</p>
+				<p>* 【表单】layUI form【数据表格】layUI table【弹出层】layer</p>
+				<p>* 【日期控件】laydate【模板引擎】laytpl</p>
+				<p>* 3、平台</p>
+				<p>* 【服务器中间件】在Java EE 6规范（Servlet 3.0、JSP 2.2）下开发，支持应用服务器中间件有Tomcat 7、WebLogic 11g等。</p>
+				<p>* 【数据库支持】目前仅提供Oracle数据库的支持，未来考虑对其他数据库扩展，例如MySQL、H2等。</p>
+				<p>* 【开发环境】Java EE、Eclipse、Maven、Git</p>
 				<br />
-				<p># v1.0.1（新增） - 2017-07-05</p>
-				<p>* 增加“用户列表”批量删除功能【可能当时忘记添加了吧。。。】</p>
-				<p style="color:#f00;">* 顶部窗口导航添加“关闭其他”、“关闭全部”功能，同时修改菜单窗口过多的展示效果【在此感谢larryCMS给予的启发】</p>
-				<p>* 添加可隐藏左侧菜单功能【之前考虑没必要添加，但是很多朋友要求加上，那就加上吧，嘿嘿。。。】</p>
-				<p>* 增加换肤功能【之前就想添加的，但是一直没有找到好的方式（好吧，其实是我忘记了），此方法相对简单，不是普遍适用，只简单的做个功能，如果实际用到建议单独写一套样式，将边框颜色、按钮颜色等统一调整，此处为保证代码的简洁性，只做简单的功能，不做赘述，另外“自定义”颜色中未做校验，所以要写入正确的色值。如“#f00”】</p>
-				<p style="color:#f00;">* 增加登录页面【背景视频仅作样式参考，实际使用中请自行更换为其他视频或图片，否则造成的任何问题使用者本人承担。】</p>
-				<p>* 新增打开窗口的动画效果</p>
+				<p># v0.0.1（新增） - 2017-10-25</p>
+				<p>* EAF框架设计初步构想</p>
 			</div>
 		</div>
 		<div class="sysNotice col">

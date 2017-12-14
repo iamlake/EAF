@@ -25,7 +25,7 @@
 		    <h1>SAMS系统登录</h1>
 		    <form class="layui-form" action="rest/user/login" method="post">
 		    	<div class="layui-form-item">
-					<input class="layui-input" name="username" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">
+					<input class="layui-input" name="account" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">
 			    </div>
 			    <div class="layui-form-item">
 					<input class="layui-input" name="password" placeholder="密码" lay-verify="required" type="password" autocomplete="off">

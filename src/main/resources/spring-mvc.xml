@@ -11,7 +11,8 @@
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 	
 	<description>Spring MVC Configuration</description>
-		<!-- 引用配置文件 -->
+	
+	<!-- 引用配置文件 -->
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 		p:location="classpath:config.properties">
@@ -20,7 +21,7 @@
 	<mvc:annotation-driven conversion-service="conversionService" />
 	
 	<!-- 扫描controller（controller层注入） -->
-	<context:component-scan base-package="com.icelake.modules.*"></context:component-scan>
+	<context:component-scan base-package="com.icelake.modules.*" />
 	
     <!-- 支持返回json(避免IE在ajax请求时，返回json出现下载 ) -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
