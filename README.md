@@ -41,10 +41,10 @@ Apache Shiro为权限授权层，Ehcahe对常用数据进行缓存，未来版�
 
 ## 特别感谢
 
-JeeSite（ThinkGem）    http://www.jeesite.com/
-Quick4J（StarZou）       https://github.com/Eliteams/quick4j
-LayUI（贤心）                  http://www.layui.com/
-layuiCMS（驊驊龔頾）   https://github.com/BrotherMa/layuiCMS
+> JeeSite（ThinkGem）    http://www.jeesite.com/
+> Quick4J（StarZou）       https://github.com/Eliteams/quick4j
+> LayUI（贤心）                  http://www.layui.com/
+> layuiCMS（驊驊龔頾）   https://github.com/BrotherMa/layuiCMS
 
 ## If you have a better suggestion,Please share out,Let's do better.
 > Author ：liyiming  
