@@ -123,6 +123,41 @@
 		<url-pattern>/druid/*</url-pattern>
 	</servlet-mapping>
 
+	<!-- kaptcha验证码 -->
+	<servlet>
+		<servlet-name>kaptcha</servlet-name>
+		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+		<init-param>
+			<param-name>kaptcha.noise.impl</param-name>
+			<param-value>com.google.code.kaptcha.impl.NoNoise</param-value>
+		</init-param>
+		<!-- 验证码图片是否有边框 -->
+		<init-param>
+			<param-name>kaptcha.border</param-name>
+			<param-value>yes</param-value>
+		</init-param>
+		<!-- 验证码图片宽度 -->
+		<init-param>
+			<param-name>kaptcha.image.width</param-name>
+			<param-value>116</param-value>
+		</init-param>
+		<!-- 验证码图片高度 -->
+		<init-param>
+			<param-name>kaptcha.image.height</param-name>
+			<param-value>36</param-value>
+		</init-param>
+		<!-- 图片上验证码位数 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.char.length</param-name>
+			<param-value>4</param-value>
+		</init-param>
+	</servlet>
+	<!-- 拦截request路径为/kaptcha.jpg的请求，然后调用kaptcha产生验证码 -->
+	<servlet-mapping>
+		<servlet-name>kaptcha</servlet-name>
+		<url-pattern>/images/kaptcha.jpg</url-pattern>
+	</servlet-mapping>
+
 	<!-- 配置session超时时间，单位分钟 -->
 	<session-config>
 		<session-timeout>30</session-timeout>

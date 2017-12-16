@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.icelake.common.persistence.constants.Global;
 import com.icelake.common.persistence.result.JSONResult;
 import com.icelake.common.persistence.result.QueryResult;
 import com.icelake.common.persistence.result.Result;
@@ -39,7 +40,7 @@ public class StudentController extends BaseController {
     @RequestMapping(value = "/student", method = RequestMethod.GET)
     public Result findStudents(Student student) {
         List<Student> list = studentService.findList(student);
-        return new QueryResult<Student>(0, "", list, list.size());
+        return new QueryResult<Student>(Global.RESULT_STAUTS_SUCCESS, "", list, list.size());
     }
 
     /**
@@ -53,7 +54,7 @@ public class StudentController extends BaseController {
     public Result findStudentById(@PathVariable("id") String studentId) {
         List<Student> list = new ArrayList<>();
         list.add(studentService.get(studentId));
-        return new QueryResult<Student>(0, "", list, list.size());
+        return new QueryResult<Student>(Global.RESULT_STAUTS_SUCCESS, "", list, list.size());
     }
 
     /**
@@ -67,7 +68,7 @@ public class StudentController extends BaseController {
     public Result saveStudent(Student student) {
         JSONResult result = new JSONResult();
         studentService.save(student);
-        result.setCode(0);
+        result.setCode(Global.RESULT_STAUTS_SUCCESS);
         result.setMsg("添加成功！");
         result.getParameters().put("", "");
         return result;
@@ -84,7 +85,7 @@ public class StudentController extends BaseController {
     public Result updateStudent(Student student) {
         JSONResult result = new JSONResult();
         studentService.save(student);
-        result.setCode(0);
+        result.setCode(Global.RESULT_STAUTS_SUCCESS);
         result.setMsg("修改成功！");
         result.getParameters().put("", "");
         return result;
@@ -101,7 +102,7 @@ public class StudentController extends BaseController {
     public Result deleteStudentById(@PathVariable("id") String studentId) {
         JSONResult result = new JSONResult();
         studentService.delete(studentId);
-        result.setCode(0);
+        result.setCode(Global.RESULT_STAUTS_SUCCESS);
         result.setMsg("删除成功！");
         result.getParameters().put("", "");
         return result;

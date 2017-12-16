@@ -23,7 +23,7 @@
 		<div class="video_mask"></div>
 		<div class="login">
 		    <h1>SAMS系统登录</h1>
-		    <form class="layui-form" action="rest/user/login" method="post">
+		    <form class="layui-form loginform" action="rest/user/login" method="post">
 		    	<div class="layui-form-item">
 					<input class="layui-input" name="account" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">
 			    </div>
@@ -31,11 +31,18 @@
 					<input class="layui-input" name="password" placeholder="密码" lay-verify="required" type="password" autocomplete="off">
 			    </div>
 			    <div class="layui-form-item form_code">
-					<input class="layui-input" name="code" placeholder="验证码" lay-verify="required" type="text" autocomplete="off">
-					<div class="code"><img src="assets/images/code.jpg" width="116" height="36"></div>
+					<input class="layui-input" name="kaptcha" placeholder="验证码" lay-verify="required" type="text" autocomplete="off">
+					<div class="code">
+						<img src="images/kaptcha.jpg" width="116" height="36" class="kaptchaImage" title="看不清?点击换一张"  data-type="changeImage"/>
+					</div>
 			    </div>
-				<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
-			</form>
+			<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
+			<!-- 
+			<br/>
+			<label class="layui-form-label">记住我</label><input type="checkbox"
+				name="rememberMe" lay-skin="switch" lay-text="ON|OFF">
+				-->
+		</form>
 		</div>
 	</body>
 </html>

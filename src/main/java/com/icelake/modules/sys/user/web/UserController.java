@@ -13,7 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.code.kaptcha.Constants;
+import com.icelake.common.persistence.constants.Global;
+import com.icelake.common.persistence.result.JSONResult;
+import com.icelake.common.persistence.result.Result;
 import com.icelake.common.web.BaseController;
 import com.icelake.modules.sys.user.entity.User;
 import com.icelake.modules.sys.user.service.UserService;
@@ -30,31 +35,41 @@ public class UserController extends BaseController {
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年10月24日
      * @param user
+     * @param kaptcha
      * @param rememberMe
      * @return
      */
     @RequestMapping(value = "/login", method = { RequestMethod.POST, RequestMethod.GET })
-    public String userLogin(User user, boolean rememberMe) {
-        if (user.getAccount() == null || user.getPassword() == null) {
-            return "redirect:/rest/page/login";
-        }
+    @ResponseBody
+    public Result userLogin(User user, String kaptcha, boolean rememberMe) {
+        JSONResult result = new JSONResult();
         Subject currentUser = SecurityUtils.getSubject();
         if (currentUser.isAuthenticated()) {
-            return "redirect:/rest/page/index";
+            result.setCode(Global.RESULT_STAUTS_SUCCESS);
+        } else if (user.getAccount() == null || user.getPassword() == null) {
+            result.setCode(Global.RESULT_STAUTS_FAILED);
+        } else if (!kaptcha.equals(request.getSession().getAttribute(Constants.KAPTCHA_SESSION_KEY))) {
+            result.setCode(Global.RESULT_STAUTS_FAILED);
+            result.setMsg("验证码不正确！");
+        } else {
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getAccount(), user.getPassword());
+            token.setRememberMe(rememberMe);
+            try {
+                currentUser.login(token);
+                result.setCode(Global.RESULT_STAUTS_SUCCESS);
+                result.setMsg("登录成功！");
+            } catch (IncorrectCredentialsException e) {
+                result.setCode(Global.RESULT_STAUTS_FAILED);
+                result.setMsg("用户名或密码不正确！");
+            } catch (LockedAccountException e) {
+                result.setCode(Global.RESULT_STAUTS_FAILED);
+                result.setMsg("账户已被冻结！");
+            } catch (AuthenticationException e) {
+                result.setCode(Global.RESULT_STAUTS_FAILED);
+                result.setMsg("登录失败！");
+            }
         }
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getAccount(), user.getPassword());
-        token.setRememberMe(rememberMe);
-        try {
-            currentUser.login(token);
-            return "redirect:/rest/page/index";
-        } catch (IncorrectCredentialsException e) {
-            System.out.println("用户名或密码不正确！");
-        } catch (LockedAccountException e) {
-            System.out.println("账户已被冻结！");
-        } catch (AuthenticationException e) {
-            System.out.println(e.getMessage());
-        }
-        return "redirect:/rest/page/login";
+        return result;
     }
 
     /**

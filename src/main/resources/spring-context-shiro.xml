@@ -12,18 +12,17 @@
     
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/rest/user/login"/>
+        <property name="loginUrl" value="/rest/page/login"/>
         <property name="successUrl" value="/rest/page/index"/>
         <property name="unauthorizedUrl" value="/rest/page/401"/>
         <!-- 
-        <property name="filters">
-            <util:map>
-                <entry key="authc">
-                    <bean class="org.apache.shiro.web.filter.authc.PassThruAuthenticationFilter"/>
-                </entry>
-                <entry key="sysUser" value-ref="sysUserFilter"/>
-            </util:map>
-        </property>
+        <property name="filters">  
+            <util:map>  
+                <entry key="authc" value-ref="formAuthenticationFilter" />  
+                <entry key="sysUser" value-ref="sysUserFilter" />  
+                <entry key="kaptcha" value-ref="kaptchaFilter" />  
+            </util:map>  
+        </property> 
          -->
         <property name="filterChainDefinitions">
             <value>
@@ -33,11 +32,12 @@
             	/js/** = anon
             	<!-- 登录页允许访问 -->
             	/rest/page/login = anon
+            	/rest/user/login = anon
             	/rest/user/logout = logout
             	<!-- 表示访问该地址的用户是身份验证通过或RememberMe登录的都可以 -->
-            	/** = user
             	<!-- /** = user,sysUser -->
             	<!-- /** = authc  表示访问该地址用户必须身份验证通过-->
+            	/** = authc
             </value>
         </property>
     </bean>    
@@ -104,9 +104,16 @@
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
     </bean>
     
-	<bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">  
-	    <property name="rememberMeParam" value="rememberMe"/>  
-	</bean>
+    <bean id="formAuthenticationFilter" class="com.icelake.modules.sys.role.security.CustomFormAuthenticationFilter">  
+        <property name="usernameParam" value="account" />  
+        <property name="passwordParam" value="password" />  
+        <property name="rememberMeParam" value="rememberMe" />  
+        <property name="loginUrl" value="/rest/page/login" />  
+        <property name="successUrl" value="/rest/page/index"/>  
+    </bean> 
+	<bean id="kaptchaFilter" class="com.icelake.modules.sys.role.security.KaptchaFilter">  
+        <property name="kaptchaParam" value="kaptcha" />  
+    </bean>   
     
     <!-- Shiro生命周期处理器 -->
     <!-- Post processor that automatically invokes init() and destroy() methods -->

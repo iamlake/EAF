@@ -37,12 +37,13 @@ public class SecurityRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        System.out.println("TODO Auto-generated method stub");
         // TODO Auto-generated method stub
         return null;
     }
 
     /**
-     * <br>Description: 登录验证
+     * <br>Description: 身份验证
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年12月6日
      * @see org.apache.shiro.realm.AuthenticatingRealm#doGetAuthenticationInfo(org.apache.shiro.authc.AuthenticationToken)
