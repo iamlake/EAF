@@ -7,7 +7,7 @@
     "dataBase": "8.00.2039",
     "maxUpload": "2M",
     "userRights": "系统管理员",
-    "description": "这是作者基于EAF理念自行开发的JavaEE开发框架",
+    "description": "这是作者基于EAF理念自行开发的JavaEE项目骨架",
     "powerby": "copyright @2017 Liyiming",
     "record": "辽ICP备15236xxx号-1",
     "keywords": "JavaEE，Spring，LayUI，EAF"

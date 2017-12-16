@@ -1,7 +1,7 @@
 var tabFilter, menu = [], liIndex, curNav, delMenu;
-layui.define(["element", "jquery"], function(exports) {
+layui.define(["element", "jquery", "eaf"], function(exports) {
 	var element = layui.element,
-		$ = layui.jquery, layId,
+		$ = layui.jquery, eaf = layui.eaf, layId,
 		Tab = function(){
 			this.tabConfig = {
 				closed : true,  
@@ -14,7 +14,8 @@ layui.define(["element", "jquery"], function(exports) {
 	//获取二级菜单数据
 	Tab.prototype.render = function() {
 		var url = this.tabConfig.url;
-		$.get(url,function(data){
+		$.get(url,function(result){
+			var data = eaf.transTreeData(result.data, 'menuId',	'parentMenuId', 'children');
 			//显示左侧菜单
 			if($(".navBar").html() == ''){
 				var _this = this;

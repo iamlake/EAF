@@ -6,7 +6,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		$ = layui.jquery;
 		tab = layui.bodyTab({
 			openTabNum : "20",  //最大可打开窗口数量
-			url : "assets/json/navs.json" //获取菜单json地址
+			url : "rest/menu" //获取菜单json地址
 		});
 
 	//更换皮肤

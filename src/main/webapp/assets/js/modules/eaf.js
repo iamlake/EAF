@@ -66,9 +66,36 @@ layui.define([ 'jquery' ], function(exports) {
 					formObj.find("[name=" + name + "]").val(ival);
 				}
 			})
-		}		
+		},
+		
+		/**
+		 * 将Json对象转换为树形结构
+		 * @param {a} 指定的选择器
+		 * @param {idStr} 需要给form赋值的json对象
+		 * @param {pidStr} 需要给form赋值的json对象
+		 * @param {chindrenStr} 需要给form赋值的json对象
+		 * @method transTreeData
+		 * @author Liyiming
+		 * */
+		transTreeData : function(a, idStr, pidStr, childrenStr) {
+			var r = [], hash = {}, id = idStr, pid = pidStr, children = childrenStr, i = 0, j = 0, len = a.length;
+			for (; i < len; i++) {
+				hash[a[i][id]] = a[i];
+			}
+			for (; j < len; j++) {
+				var aVal = a[j], hashVP = hash[aVal[pid]];
+				if (hashVP) {
+					!hashVP[children]
+							&& (hashVP[children] = []);
+					hashVP[children].push(aVal);
+				} else {
+					r.push(aVal);
+				}
+			}
+			return r;
+		}
 
-	};
+	}
 	
 	exports('eaf', obj);
 });

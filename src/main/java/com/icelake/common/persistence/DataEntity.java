@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public abstract class DataEntity<T> extends BaseEntity<T> {
 
-    private String remark;
+    protected String remark;
 
     protected String activeFlag;
 

@@ -4,7 +4,7 @@ layui.use([ 'form', 'layer' ], function() {
  		$ = layui.jquery, active = {
 			changeImage : function() {
 				var time = new Date().getTime();
-				$('.kaptchaImage').attr("src", "images/kaptcha.jpg?t=" + time);// 为了不让验证码缓存，为了安全起见，需要次次都刷新
+				$('.kaptchaImage').attr("src", "images/kaptcha.jpg?t=" + time);// 为了不让验证码缓存，安全起见需要次次都刷新
 			}
 		}
 	

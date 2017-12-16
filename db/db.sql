@@ -1,5 +1,5 @@
 prompt PL/SQL Developer import file
-prompt Created on 2017年12月14日 by icelake
+prompt Created on 2017年12月17日 by icelake
 set feedback off
 set define off
 prompt Dropping SAMS_STUDENT...
@@ -208,8 +208,9 @@ create table SYS_MENU
   menu_id           VARCHAR2(32) not null,
   title             VARCHAR2(128),
   target            VARCHAR2(32),
-  url               VARCHAR2(256),
-  image             VARCHAR2(256),
+  href              VARCHAR2(256),
+  icon              VARCHAR2(256),
+  spread            CHAR(1),
   menu_order        VARCHAR2(32),
   show_default      VARCHAR2(32),
   parent_menu_id    VARCHAR2(32),
@@ -233,10 +234,12 @@ comment on column SYS_MENU.title
   is '菜单名称';
 comment on column SYS_MENU.target
   is '目标框架';
-comment on column SYS_MENU.url
+comment on column SYS_MENU.href
   is '请求URL';
-comment on column SYS_MENU.image
+comment on column SYS_MENU.icon
   is '图片';
+comment on column SYS_MENU.spread
+  is '是否默认展开';
 comment on column SYS_MENU.menu_order
   is '排序';
 comment on column SYS_MENU.show_default
@@ -835,7 +838,7 @@ values ('f18732328d9f4912b1e40e3082843848', '08', '徐建兴', '男', '2017-11-2
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
 values ('f3c181f488a345b4a717734d02c0388c', '05', '刘再冬', '男', '2017-11-15', '2017-11-27', null, '333', '1', null, to_timestamp('27-11-2017 16:40:17.924000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('01-12-2017 19:49:12.594000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('cc05168ecfda46419428ac60f30c9966', '12', '马章元', '男', '2017-12-08', '2017-12-08', null, '22222', '1', null, to_timestamp('08-12-2017 18:18:15.793000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('08-12-2017 18:18:33.897000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('cc05168ecfda46419428ac60f30c9966', '12', '马章元', '男', '2017-12-08', '2017-12-08', null, '123', '1', null, to_timestamp('08-12-2017 18:18:15.793000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('16-12-2017 14:14:05.133000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 commit;
 prompt 6 records loaded
 prompt Loading SAMS_TEACHER...
@@ -848,7 +851,22 @@ values ('SF_2', '2', '否', 'SF', '是否', '-1', null, null, 'zh_CN', null, '1'
 commit;
 prompt 2 records loaded
 prompt Loading SYS_MENU...
-prompt Table is empty
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('1', '后台首页', null, 'rest/page/dashboard', 'icon-computer', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('2', '文章列表', null, 'rest/page/news', 'icon-text', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('3', '友情链接', null, 'rest/page/links', '&#xe64c;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('4', '系统基本参数', null, 'rest/page/sysparam', '&#xe631;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('5', '其他页面', null, null, '&#xe630;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('6', '404页面', null, 'rest/page/404', '&#xe61c;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
+insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('7', '登录', '_blank', 'rest/page/login', '&#xe609;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
+commit;
+prompt 7 records loaded
 prompt Loading SYS_ORG_DIMENSION...
 prompt Table is empty
 prompt Loading SYS_ORG_DIMENSION_UNIT...

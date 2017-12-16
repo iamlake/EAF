@@ -7,7 +7,7 @@ function navBar(strData){
 	}	
 	var ulHtml = '<ul class="layui-nav layui-nav-tree">';
 	for(var i=0;i<data.length;i++){
-		if(data[i].spread){
+		if (data[i].spread) {
 			ulHtml += '<li class="layui-nav-item layui-nav-itemed">';
 		}else{
 			ulHtml += '<li class="layui-nav-item">';
