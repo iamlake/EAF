@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import com.icelake.common.persistence.constants.Global;
+import com.icelake.modules.sys.user.entity.User;
+
 /**
  * <br>Title: BaseController
  * <br>Description: 控制器支持类
@@ -31,5 +34,13 @@ public abstract class BaseController {
         this.request = request;
         this.response = response;
         this.session = request.getSession();
+    }
+
+    protected User getUser() {
+        Object userObj = session.getAttribute(Global.USER_SESSION);
+        if (userObj == null) {
+            return null;
+        }
+        return (User) userObj;
     }
 }

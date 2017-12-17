@@ -30,7 +30,7 @@
 			</a>
 		</div>
 		<div class="panel col">
-			<a href="javascript:;" data-url="rest/user/allusers">
+			<a href="javascript:;" data-url="rest/page/user_allUsers">
 				<div class="panel_icon" style="background-color:#FF5722;">
 					<i class="iconfont icon-dongtaifensishu" data-icon="icon-dongtaifensishu"></i>
 				</div>

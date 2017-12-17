@@ -145,13 +145,17 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 			title : false,
 			type : 1,
 			content : '	<div class="admin-header-lock" id="lock-box">'
-					+ '<div class="admin-header-lock-img"><img src="assets/images/face.jpg"/></div>'
-					+ '<div class="admin-header-lock-name" id="lockUserName">沈老师</div>'
+					+ '<div class="admin-header-lock-img"><img src="'
+					+ loginUser.userHead
+					+ '"/></div>'
+					+ '<div class="admin-header-lock-name" id="lockUserName">'
+					+ loginUser.fullname
+					+ '</div>'
 					+ '<div class="input_btn">'
-					+ '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'
+					+ '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="enter password.." name="lockPwd" id="lockPwd" />'
 					+ '<button class="layui-btn" id="unlock">解锁</button>'
 					+ '</div>'
-					+ '<p>请输入“123456”，否则不会解锁成功哦！！！</p>'
+					+ '<p>请输入您的密码，否则不会解锁成功哦！！！</p>'
 					+ '</div>',
 			closeBtn : 0,
 			shade : 0.9
@@ -159,7 +163,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		$(".admin-header-lock-input").focus();
 	}
 	$(".lockcms").on("click",function(){
-		window.sessionStorage.setItem("lockcms",true);
+		window.sessionStorage.setItem("lockcms", true);
 		lockPage();
 	})
 	// 判断是否显示锁屏
@@ -168,18 +172,28 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	}
 	// 解锁
 	$("body").on("click","#unlock",function(){
-		if($(this).siblings(".admin-header-lock-input").val() == ''){
+		var lockinput = $(this).siblings(".admin-header-lock-input");
+		if(lockinput.val() == ''){
 			layer.msg("请输入解锁密码！");
-			$(this).siblings(".admin-header-lock-input").focus();
+			lockinput.focus();
 		}else{
-			if($(this).siblings(".admin-header-lock-input").val() == "123456"){
-				window.sessionStorage.setItem("lockcms",false);
-				$(this).siblings(".admin-header-lock-input").val('');
-				layer.closeAll("page");
-			}else{
-				layer.msg("密码错误，请重新输入！");
-				$(this).siblings(".admin-header-lock-input").val('').focus();
-			}
+			$.get("rest/user/" + loginUser.account,
+				function(result) {
+					if(result.code == '0'){
+						if(lockinput.val() == result.data[0].password){
+							window.sessionStorage.setItem("lockcms",false);
+							lockinput.val('');
+							layer.closeAll("page");
+						}else{
+							layer.msg("密码错误，请重新输入！");
+							lockinput.val('').focus();
+						}
+					}else{
+						layer.msg("您还不能这么做！");
+						lockinput.val('').focus();
+					}
+				}
+			);
 		}
 	});
 	$(document).on('keydown', function() {
@@ -221,7 +235,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	        id: 'LAY_layuipro',
 	        btn: ['火速围观'],
 	        moveType: 1,
-	        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>最近偶然发现贤心大神的layui框架，瞬间被他的完美样式所吸引，虽然功能不算强大，但毕竟是一个刚刚出现的框架，后面会慢慢完善的。很早之前就想做一套后台模版，但是感觉bootstrop代码的冗余太大，不是非常喜欢，自己写又太累，所以一直闲置了下来。直到遇到了layui我才又燃起了制作一套后台模版的斗志。由于本人只是纯前端，所以页面只是单纯的实现了效果，没有做服务器端的一些处理，可能后期技术跟上了会更新的，如果有什么问题欢迎大家指导。谢谢大家。</p><p>在此特别感谢Beginner和Paco，他们写的框架给了我很好的启发和借鉴。希望有时间可以多多请教。</p></div>',
+	        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>最近一直在考虑前端框架选型，某次我偶然通过下载云码网站分享的larryCMS模板，最后找到了贤心大神的LayUI官网，瞬间让我觉得眼前一亮，这就是我想要的。很早之前就想着手搭建一套项目框架，但苦于没有时间，最初前端选型是考虑Metronic，但bootstrop代码的冗余很大，自己本来就不擅长前端，所以一直搁置了下来，直到遇到了LayUI我才又燃起了斗志。由于最初只是为了体验，所以后台代码也没有设计成多大的格局，直到现在也只是考虑简单、可用，为主要目的。我也希望后续有更多的时间和精力将它逐步完善。由于从着手去做到现在的规模，只有1个多月的时间，很多不足之处，也请大家给予指正。</p><p>它山之石可以攻玉。开发过程中我参考了很多JeeSite和Quick4J的设计思想，组织权限表也参考了UniEAP的设计，另外整个前端模板都是基于LayuiCMS，在此特别感谢相关作者，后续也希望多多指教。</p></div>',
 	        success: function(layero){
 				var btn = layero.find('.layui-layer-btn');
 				btn.css('text-align', 'center');

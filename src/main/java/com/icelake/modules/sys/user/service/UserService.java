@@ -20,4 +20,15 @@ public class UserService extends CrudService<UserDAO, User> {
     public User getUserByAccount(String account) {
         return dao.selectByAccount(account);
     }
+
+    /**
+     * <br>Description: 登录用户名密码验证
+     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
+     * <br>Date:2017年12月17日
+     * @param user
+     * @return
+     */
+    public User userAuthentication(User user) {
+        return dao.authentication(user);
+    }
 }

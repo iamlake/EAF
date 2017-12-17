@@ -68,24 +68,24 @@
 							<a href="javascript:;"><i class="iconfont icon-gonggao"></i><cite>系统公告</cite></a>
 						</li>
 				    	<li class="layui-nav-item" mobile>
-				    		<a href="javascript:;" class="mobileAddTab" data-url="rest/user/changepwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
+				    		<a href="javascript:;" class="mobileAddTab" data-url="rest/page/user_changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>设置</cite></a>
 				    	</li>
 				    	<li class="layui-nav-item" mobile>
-				    		<a href="rest/user/logout" class="signOut"><i class="iconfont icon-loginout"></i> 退出</a>
+				    		<a href="rest/logout" class="signOut"><i class="iconfont icon-loginout"></i> 退出</a>
 				    	</li>
 						<li class="layui-nav-item lockcms" pc>
 							<a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
 						</li>
 						<li class="layui-nav-item" pc>
 							<a href="javascript:;">
-								<img src="assets/images/face.jpg" class="layui-circle" width="35" height="35">
-								<cite>沈老师</cite>
+								<img src=${USER_SESSION.userHead } class="layui-circle" width="35" height="35">
+								<cite>${USER_SESSION.fullname }</cite>
 							</a>
 							<dl class="layui-nav-child">
-								<dd><a href="javascript:;" data-url="rest/user/userinfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
-								<dd><a href="javascript:;" data-url="rest/user/changepwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
+								<dd><a href="javascript:;" data-url="rest/page/user_userInfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
+								<dd><a href="javascript:;" data-url="rest/page/user_changePwd"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
 								<dd><a href="javascript:;" class="changeSkin"><i class="iconfont icon-huanfu"></i><cite>更换皮肤</cite></a></dd>
-								<dd><a href="rest/user/logout" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
+								<dd><a href="rest/logout" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
 							</dl>
 						</li>
 					</ul>
@@ -94,8 +94,8 @@
 			<!-- 左侧导航 -->
 			<div class="layui-side layui-bg-black">
 				<div class="user-photo">
-					<a class="img" title="我的头像" ><img src="assets/images/face.jpg"></a>
-					<p>你好！<span class="userName">沈老师</span>, 欢迎回来</p>
+					<a class="img" title="我的头像" ><img src=${USER_SESSION.userHead }></a>
+					<p>你好！<span class="userName">${USER_SESSION.fullname }</span>, 欢迎回来</p>
 				</div>
 				<div class="navBar layui-side-scroll"></div>
 			</div>

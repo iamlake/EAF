@@ -11,7 +11,7 @@ layui.use([ 'form', 'layer' ], function() {
 	// 登录按钮事件
 	form.on("submit(login)",function(data){
 		$.ajax({
-			url : 'rest/user/login',
+			url : 'rest/login',
 			type : 'POST',
 			data : data.field,
 			success : function(result) {

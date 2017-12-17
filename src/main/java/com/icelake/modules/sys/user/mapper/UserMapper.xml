@@ -35,13 +35,37 @@
     EXT1, EXT2, EXT3
   </sql>
   <!-- 登录用户名密码验证 -->
+  	<select id="authentication" parameterType="com.icelake.modules.sys.user.entity.User"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_ORG_USER
+		where ACTIVE_FLAG = '1'
+			and ACCOUNT=#{account}
+			and PASSWORD=#{password}
+	</select>
+	<!-- 根据登录名查询用户 -->
   <select id="selectByAccount" parameterType="java.lang.String" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
 		from SYS_ORG_USER
 		where ACTIVE_FLAG = '1'
 			and ACCOUNT=#{account}
-	</select>  
+	</select>
+	<!-- 查询全部 -->
+	<select id="selectByCustomConditions" parameterType="com.icelake.modules.sys.user.entity.User"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_ORG_USER
+		where ACTIVE_FLAG = '1'
+		<if test="null!=account and ''!=account">
+			and ACCOUNT=#{account}
+		</if>
+		<if test="null!=fullname and ''!=fullname">
+			and FULLNAME like '%${fullname}%'
+		</if>
+	</select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

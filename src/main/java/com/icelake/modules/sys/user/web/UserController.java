@@ -1,7 +1,9 @@
 package com.icelake.modules.sys.user.web;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -10,7 +12,7 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,13 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.code.kaptcha.Constants;
 import com.icelake.common.persistence.constants.Global;
 import com.icelake.common.persistence.result.JSONResult;
+import com.icelake.common.persistence.result.QueryResult;
 import com.icelake.common.persistence.result.Result;
 import com.icelake.common.web.BaseController;
 import com.icelake.modules.sys.user.entity.User;
 import com.icelake.modules.sys.user.service.UserService;
 
 @Controller
-@RequestMapping("/user")
 public class UserController extends BaseController {
 
     @Resource
@@ -56,6 +58,8 @@ public class UserController extends BaseController {
             token.setRememberMe(rememberMe);
             try {
                 currentUser.login(token);
+                final User loginUser = userService.getUserByAccount(user.getAccount());
+                session.setAttribute(Global.USER_SESSION, loginUser);
                 result.setCode(Global.RESULT_STAUTS_SUCCESS);
                 result.setMsg("登录成功！");
             } catch (IncorrectCredentialsException e) {
@@ -88,38 +92,19 @@ public class UserController extends BaseController {
     }
 
     /**
-     * <br>Description: 用户信息
+     * <br>Description: 通过账号查询用户信息
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
-     * <br>Date:2017年11月2日
-     * @param m
-     * @param session
+     * <br>Date:2017年12月17日
+     * @param account
      * @return
      */
-    @RequestMapping("/userinfo")
-    public String userInfo() {
-        return "user/userInfo";
+    @RequestMapping(value = "/user/{account}", method = RequestMethod.GET)
+    @ResponseBody
+    public Result findUserByAccount(@PathVariable("account") String account) {
+        List<User> list = new ArrayList<>();
+        User user = userService.getUserByAccount(account);
+        list.add(user);
+        return new QueryResult<User>(Global.RESULT_STAUTS_SUCCESS, "", list, list.size());
     }
 
-    /**
-     * <br>Description: 修改密码
-     * <br>Author:李一鸣(liyiming.neu@neusoft.com)
-     * <br>Date:2017年11月1日
-     * @param m
-     * @param session
-     * @return
-     */
-    @RequestMapping("/changepwd")
-    public String changePwd(Model m, HttpSession session) {
-        return "user/changePwd";
-    }
-
-    @RequestMapping("/allusers")
-    public String allUsers(Model m, HttpSession session) {
-        return "user/allUsers";
-    }
-
-    @RequestMapping("/adduser")
-    public String addUser(Model m, HttpSession session) {
-        return "user/addUser";
-    }
 }

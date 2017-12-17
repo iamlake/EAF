@@ -23,7 +23,7 @@
 		<div class="video_mask"></div>
 		<div class="login">
 		    <h1>SAMS系统登录</h1>
-		    <form class="layui-form loginform" action="rest/user/login" method="post">
+		    <form class="layui-form loginform" action="rest/login" method="post">
 		    	<div class="layui-form-item">
 					<input class="layui-input" name="account" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">
 			    </div>

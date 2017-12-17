@@ -51,7 +51,7 @@ public class SecurityRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token)
             throws AuthenticationException {
-        User user = userService.getUserByAccount(String.valueOf(token.getPrincipal()));
+        final User user = userService.getUserByAccount(String.valueOf(token.getPrincipal()));
         if (user == null)
             throw new UnknownAccountException();//找不到账号
         if (Boolean.TRUE.equals(user.getIsLocked()))

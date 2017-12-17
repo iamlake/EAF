@@ -45,6 +45,14 @@ public class User extends DataEntity<User> {
 
     private String homeAddress;
 
+    public User() {
+    }
+
+    public User(String userAccount, String userPwd) {
+        this.account = userAccount;
+        this.password = userPwd;
+    }
+
     public String getUserId() {
         return userId;
     }

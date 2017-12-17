@@ -12,5 +12,10 @@
 <script type="text/javascript" src="<%=basePath%>assets/js/global.js"></script>
 <!-- TODO 页面公共资源 -->
 <script type="text/javascript">
-	var basePath = '<%=basePath%>'
+	var basePath = '<%=basePath%>';
+	var loginUser = {
+		account : '${USER_SESSION.account }',
+		fullname : '${USER_SESSION.fullname }',
+		userHead : '${USER_SESSION.userHead }'
+	}
 </script>
