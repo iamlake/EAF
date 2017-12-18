@@ -78,8 +78,8 @@
 						</li>
 						<li class="layui-nav-item" pc>
 							<a href="javascript:;">
-								<img src=${USER_SESSION.userHead } class="layui-circle" width="35" height="35">
-								<cite>${USER_SESSION.fullname }</cite>
+								<img src=${user_session.userHead } class="layui-circle" width="35" height="35">
+								<cite>${user_session.fullname }</cite>
 							</a>
 							<dl class="layui-nav-child">
 								<dd><a href="javascript:;" data-url="rest/page/user_userInfo"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>
@@ -94,8 +94,8 @@
 			<!-- 左侧导航 -->
 			<div class="layui-side layui-bg-black">
 				<div class="user-photo">
-					<a class="img" title="我的头像" ><img src=${USER_SESSION.userHead }></a>
-					<p>你好！<span class="userName">${USER_SESSION.fullname }</span>, 欢迎回来</p>
+					<a class="img" title="我的头像" ><img src=${user_session.userHead }></a>
+					<p>你好！<span class="userName">${user_session.fullname }</span>, 欢迎回来</p>
 				</div>
 				<div class="navBar layui-side-scroll"></div>
 			</div>

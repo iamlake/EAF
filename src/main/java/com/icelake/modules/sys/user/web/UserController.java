@@ -45,8 +45,8 @@ public class UserController extends BaseController {
     @ResponseBody
     public Result userLogin(User user, String kaptcha, boolean rememberMe) {
         JSONResult result = new JSONResult();
-        Subject currentUser = SecurityUtils.getSubject();
-        if (currentUser.isAuthenticated()) {
+        Subject subject = SecurityUtils.getSubject();
+        if (subject.isAuthenticated()) {
             result.setCode(Global.RESULT_STAUTS_SUCCESS);
         } else if (user.getAccount() == null || user.getPassword() == null) {
             result.setCode(Global.RESULT_STAUTS_FAILED);
@@ -57,7 +57,7 @@ public class UserController extends BaseController {
             UsernamePasswordToken token = new UsernamePasswordToken(user.getAccount(), user.getPassword());
             token.setRememberMe(rememberMe);
             try {
-                currentUser.login(token);
+                subject.login(token);
                 final User loginUser = userService.getUserByAccount(user.getAccount());
                 session.setAttribute(Global.USER_SESSION, loginUser);
                 result.setCode(Global.RESULT_STAUTS_SUCCESS);
@@ -86,8 +86,8 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "/logout", method = { RequestMethod.POST, RequestMethod.GET })
     public String userLogout() {
-        Subject currentUser = SecurityUtils.getSubject();
-        currentUser.logout();
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
         return "redirect:/rest/page/login";
     }
 

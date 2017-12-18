@@ -141,7 +141,7 @@ layui.use(['layer','table','eaf'],function(){
 			//layer.alert('编辑行：<br>' + JSON.stringify(data))
 			active.forward("编辑学生");
 		} else if (obj.event === 'doDel') {
-			layer.confirm('确定要删除这条记录吗？', {
+			layer.confirm('确定要删除"' + data.studentName + '"吗？', {
 				icon : 3,
 				title : '提示'
 			}, function(index) {

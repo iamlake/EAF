@@ -1,5 +1,5 @@
 prompt PL/SQL Developer import file
-prompt Created on 2017å¹´12æœˆ17æ—¥ by icelake
+prompt Created on 2017Äê12ÔÂ18ÈÕ by icelake
 set feedback off
 set define off
 prompt Dropping SAMS_STUDENT...
@@ -50,39 +50,39 @@ create table SAMS_STUDENT
 )
 ;
 comment on table SAMS_STUDENT
-  is 'å­¦ç”Ÿè¡¨';
+  is 'Ñ§Éú±í';
 comment on column SAMS_STUDENT.student_id
-  is 'å­¦ç”ŸID';
+  is 'Ñ§ÉúID';
 comment on column SAMS_STUDENT.student_no
-  is 'å­¦å·';
+  is 'Ñ§ºÅ';
 comment on column SAMS_STUDENT.student_name
-  is 'å­¦ç”Ÿå§“å';
+  is 'Ñ§ÉúĞÕÃû';
 comment on column SAMS_STUDENT.sex
-  is 'æ€§åˆ«';
+  is 'ĞÔ±ğ';
 comment on column SAMS_STUDENT.birth_date
-  is 'å‡ºç”Ÿæ—¥æœŸ';
+  is '³öÉúÈÕÆÚ';
 comment on column SAMS_STUDENT.start_time
-  is 'å…¥å­¦æ—¶é—´';
+  is 'ÈëÑ§Ê±¼ä';
 comment on column SAMS_STUDENT.finish_time
-  is 'æ¯•ä¸šæ—¶é—´';
+  is '±ÏÒµÊ±¼ä';
 comment on column SAMS_STUDENT.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SAMS_STUDENT.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SAMS_STUDENT.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SAMS_STUDENT.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SAMS_STUDENT.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SAMS_STUDENT.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SAMS_STUDENT.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SAMS_STUDENT.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SAMS_STUDENT.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SAMS_STUDENT
   add constraint PK_SAMS_STUDENT primary key (STUDENT_ID);
 
@@ -106,35 +106,35 @@ create table SAMS_TEACHER
 )
 ;
 comment on table SAMS_TEACHER
-  is 'æ•™å¸ˆè¡¨';
+  is '½ÌÊ¦±í';
 comment on column SAMS_TEACHER.teacher_id
-  is 'æ•™å¸ˆID';
+  is '½ÌÊ¦ID';
 comment on column SAMS_TEACHER.teacher_no
-  is 'æ•™å¸ˆç¼–å·';
+  is '½ÌÊ¦±àºÅ';
 comment on column SAMS_TEACHER.teacher_name
-  is 'æ•™å¸ˆå§“å';
+  is '½ÌÊ¦ĞÕÃû';
 comment on column SAMS_TEACHER.sex
-  is 'æ€§åˆ«';
+  is 'ĞÔ±ğ';
 comment on column SAMS_TEACHER.birth_date
-  is 'å‡ºç”Ÿæ—¥æœŸ';
+  is '³öÉúÈÕÆÚ';
 comment on column SAMS_TEACHER.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SAMS_TEACHER.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SAMS_TEACHER.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SAMS_TEACHER.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SAMS_TEACHER.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SAMS_TEACHER.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SAMS_TEACHER.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SAMS_TEACHER.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SAMS_TEACHER.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SAMS_TEACHER
   add constraint PK_SAMS_TEACHER primary key (TEACHER_ID);
 
@@ -162,43 +162,43 @@ create table SYS_CODELIST
 )
 ;
 comment on table SYS_CODELIST
-  is 'ä»£ç è¡¨';
+  is '´úÂë±í';
 comment on column SYS_CODELIST.code_id
   is 'PKID';
 comment on column SYS_CODELIST.code_value
-  is 'ä»£ç å€¼';
+  is '´úÂëÖµ';
 comment on column SYS_CODELIST.code_value_name
-  is 'ä»£ç åç§°';
+  is '´úÂëÃû³Æ';
 comment on column SYS_CODELIST.code_type
-  is 'ä»£ç ç±»å‹';
+  is '´úÂëÀàĞÍ';
 comment on column SYS_CODELIST.code_type_name
-  is 'ä»£ç ç±»å‹åç§°';
+  is '´úÂëÀàĞÍÃû³Æ';
 comment on column SYS_CODELIST.code_parent
-  is 'çˆ¶èŠ‚ç‚¹ä»£ç å€¼';
+  is '¸¸½Úµã´úÂëÖµ';
 comment on column SYS_CODELIST.code_order
-  is 'æ’åº';
+  is 'ÅÅĞò';
 comment on column SYS_CODELIST.filter
-  is 'çº§è”è®¾ç½®å±æ€§';
+  is '¼¶ÁªÉèÖÃÊôĞÔ';
 comment on column SYS_CODELIST.language
-  is 'å›½é™…åŒ–ä¿¡æ¯';
+  is '¹ú¼Ê»¯ĞÅÏ¢';
 comment on column SYS_CODELIST.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_CODELIST.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_CODELIST.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_CODELIST.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_CODELIST.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_CODELIST.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_CODELIST.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_CODELIST.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_CODELIST.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_CODELIST
   add constraint PK_SYS_CODELIST primary key (CODE_ID);
 
@@ -227,45 +227,45 @@ create table SYS_MENU
 )
 ;
 comment on table SYS_MENU
-  is 'èœå•è¡¨';
+  is '²Ëµ¥±í';
 comment on column SYS_MENU.menu_id
-  is 'èœå•ID';
+  is '²Ëµ¥ID';
 comment on column SYS_MENU.title
-  is 'èœå•åç§°';
+  is '²Ëµ¥Ãû³Æ';
 comment on column SYS_MENU.target
-  is 'ç›®æ ‡æ¡†æ¶';
+  is 'Ä¿±ê¿ò¼Ü';
 comment on column SYS_MENU.href
-  is 'è¯·æ±‚URL';
+  is 'ÇëÇóURL';
 comment on column SYS_MENU.icon
-  is 'å›¾ç‰‡';
+  is 'Í¼Æ¬';
 comment on column SYS_MENU.spread
-  is 'æ˜¯å¦é»˜è®¤å±•å¼€';
+  is 'ÊÇ·ñÄ¬ÈÏÕ¹¿ª';
 comment on column SYS_MENU.menu_order
-  is 'æ’åº';
+  is 'ÅÅĞò';
 comment on column SYS_MENU.show_default
-  is 'æ˜¯å¦é»˜è®¤æ˜¾ç¤º';
+  is 'ÊÇ·ñÄ¬ÈÏÏÔÊ¾';
 comment on column SYS_MENU.parent_menu_id
-  is 'çˆ¶èœå•ID';
+  is '¸¸²Ëµ¥ID';
 comment on column SYS_MENU.app_id
-  is 'åº”ç”¨ID';
+  is 'Ó¦ÓÃID';
 comment on column SYS_MENU.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_MENU.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_MENU.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_MENU.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_MENU.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_MENU.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_MENU.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_MENU.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_MENU.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_MENU
   add constraint PK_SYS_MENU primary key (MENU_ID);
 
@@ -290,37 +290,37 @@ create table SYS_ORG_DIMENSION
 )
 ;
 comment on table SYS_ORG_DIMENSION
-  is 'ç»„ç»‡ç»´åº¦è¡¨';
+  is '×éÖ¯Î¬¶È±í';
 comment on column SYS_ORG_DIMENSION.dimension_id
-  is 'ç»´åº¦ID';
+  is 'Î¬¶ÈID';
 comment on column SYS_ORG_DIMENSION.dimension_name
-  is 'ç»´åº¦åç§°';
+  is 'Î¬¶ÈÃû³Æ';
 comment on column SYS_ORG_DIMENSION.dimension_type
-  is 'ç»´åº¦ç±»å‹';
+  is 'Î¬¶ÈÀàĞÍ';
 comment on column SYS_ORG_DIMENSION.description
-  is 'æè¿°ä¿¡æ¯';
+  is 'ÃèÊöĞÅÏ¢';
 comment on column SYS_ORG_DIMENSION.is_default
-  is 'æ˜¯å¦ä¸ºé»˜è®¤ç»´åº¦';
+  is 'ÊÇ·ñÎªÄ¬ÈÏÎ¬¶È';
 comment on column SYS_ORG_DIMENSION.dimension_order
-  is 'ç»´åº¦æ˜¾ç¤ºé¡ºåº';
+  is 'Î¬¶ÈÏÔÊ¾Ë³Ğò';
 comment on column SYS_ORG_DIMENSION.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_ORG_DIMENSION.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_ORG_DIMENSION.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_ORG_DIMENSION.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_ORG_DIMENSION.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_ORG_DIMENSION.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_DIMENSION.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_ORG_DIMENSION.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_ORG_DIMENSION.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_ORG_DIMENSION
   add constraint PK_SYS_ORG_DIMENSION primary key (DIMENSION_ID);
 
@@ -350,47 +350,47 @@ create table SYS_ORG_DIMENSION_UNIT
 )
 ;
 comment on table SYS_ORG_DIMENSION_UNIT
-  is 'ç»„ç»‡ç»´åº¦ä¸ç»„ç»‡å•å…ƒå…³ç³»è¡¨';
+  is '×éÖ¯Î¬¶ÈÓë×éÖ¯µ¥Ôª¹ØÏµ±í';
 comment on column SYS_ORG_DIMENSION_UNIT.dimension_unit_id
-  is 'ç»´åº¦ç»„ç»‡å•å…ƒID';
+  is 'Î¬¶È×éÖ¯µ¥ÔªID';
 comment on column SYS_ORG_DIMENSION_UNIT.dimension_id
-  is 'ç»´åº¦ID';
+  is 'Î¬¶ÈID';
 comment on column SYS_ORG_DIMENSION_UNIT.unit_id
-  is 'ç»„ç»‡å•å…ƒID';
+  is '×éÖ¯µ¥ÔªID';
 comment on column SYS_ORG_DIMENSION_UNIT.parent_dimension_unit_id
-  is 'çˆ¶ç»´åº¦ç»„ç»‡å•å…ƒID';
+  is '¸¸Î¬¶È×éÖ¯µ¥ÔªID';
 comment on column SYS_ORG_DIMENSION_UNIT.alias_name
-  is 'ç»„ç»‡å•å…ƒåˆ«å';
+  is '×éÖ¯µ¥Ôª±ğÃû';
 comment on column SYS_ORG_DIMENSION_UNIT.unit_path
-  is 'ä¸Šçº§è·¯å¾„';
+  is 'ÉÏ¼¶Â·¾¶';
 comment on column SYS_ORG_DIMENSION_UNIT.dimension_unit_level
-  is 'å±‚æ¬¡';
+  is '²ã´Î';
 comment on column SYS_ORG_DIMENSION_UNIT.dimension_unit_order
-  is 'åŒçº§æ’åºå·';
+  is 'Í¬¼¶ÅÅĞòºÅ';
 comment on column SYS_ORG_DIMENSION_UNIT.time_begin
-  is 'ç”Ÿæ•ˆæ—¶é—´';
+  is 'ÉúĞ§Ê±¼ä';
 comment on column SYS_ORG_DIMENSION_UNIT.time_end
-  is 'å¤±æ•ˆæ—¶é—´';
+  is 'Ê§Ğ§Ê±¼ä';
 comment on column SYS_ORG_DIMENSION_UNIT.is_enabled
-  is 'æ˜¯å¦å¯ç”¨';
+  is 'ÊÇ·ñÆôÓÃ';
 comment on column SYS_ORG_DIMENSION_UNIT.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_ORG_DIMENSION_UNIT.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_ORG_DIMENSION_UNIT.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_ORG_DIMENSION_UNIT.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_ORG_DIMENSION_UNIT.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_ORG_DIMENSION_UNIT.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_DIMENSION_UNIT.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_ORG_DIMENSION_UNIT.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_ORG_DIMENSION_UNIT.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_ORG_DIMENSION_UNIT
   add constraint PK_SYS_ORG_DIMENSION_UNIT primary key (DIMENSION_UNIT_ID);
 
@@ -416,39 +416,39 @@ create table SYS_ORG_UNIT
 )
 ;
 comment on table SYS_ORG_UNIT
-  is 'ç»„ç»‡å•å…ƒè¡¨';
+  is '×éÖ¯µ¥Ôª±í';
 comment on column SYS_ORG_UNIT.unit_id
-  is 'ç»„ç»‡å•å…ƒID';
+  is '×éÖ¯µ¥ÔªID';
 comment on column SYS_ORG_UNIT.unit_code
-  is 'ç»„ç»‡å•å…ƒç¼–ç ';
+  is '×éÖ¯µ¥Ôª±àÂë';
 comment on column SYS_ORG_UNIT.unit_name
-  is 'ç»„ç»‡å•å…ƒåç§°';
+  is '×éÖ¯µ¥ÔªÃû³Æ';
 comment on column SYS_ORG_UNIT.unit_type
-  is 'ç»„ç»‡å•å…ƒç±»å‹';
+  is '×éÖ¯µ¥ÔªÀàĞÍ';
 comment on column SYS_ORG_UNIT.time_begin
-  is 'ç”Ÿæ•ˆæ—¶é—´';
+  is 'ÉúĞ§Ê±¼ä';
 comment on column SYS_ORG_UNIT.time_end
-  is 'å¤±æ•ˆæ—¶é—´';
+  is 'Ê§Ğ§Ê±¼ä';
 comment on column SYS_ORG_UNIT.is_enabled
-  is 'æ˜¯å¦å¯ç”¨';
+  is 'ÊÇ·ñÆôÓÃ';
 comment on column SYS_ORG_UNIT.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_ORG_UNIT.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_ORG_UNIT.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_ORG_UNIT.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_ORG_UNIT.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_ORG_UNIT.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_UNIT.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_ORG_UNIT.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_ORG_UNIT.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_ORG_UNIT
   add constraint PK_SYS_ORG_UNIT primary key (UNIT_ID);
 
@@ -471,33 +471,33 @@ create table SYS_ORG_UNIT_USER
 )
 ;
 comment on table SYS_ORG_UNIT_USER
-  is 'ç»„ç»‡å•å…ƒä¸ç”¨æˆ·å…³ç³»è¡¨';
+  is '×éÖ¯µ¥ÔªÓëÓÃ»§¹ØÏµ±í';
 comment on column SYS_ORG_UNIT_USER.unit_user_id
-  is 'å…³ç³»ID';
+  is '¹ØÏµID';
 comment on column SYS_ORG_UNIT_USER.user_id
-  is 'ç”¨æˆ·ID';
+  is 'ÓÃ»§ID';
 comment on column SYS_ORG_UNIT_USER.unit_id
-  is 'ç»„ç»‡å•å…ƒID';
+  is '×éÖ¯µ¥ÔªID';
 comment on column SYS_ORG_UNIT_USER.is_leader
-  is 'æ˜¯å¦è´Ÿè´£äºº';
+  is 'ÊÇ·ñ¸ºÔğÈË';
 comment on column SYS_ORG_UNIT_USER.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_ORG_UNIT_USER.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_ORG_UNIT_USER.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_ORG_UNIT_USER.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_ORG_UNIT_USER.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_ORG_UNIT_USER.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_UNIT_USER.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_ORG_UNIT_USER.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_ORG_UNIT_USER.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_ORG_UNIT_USER
   add constraint PK_SYS_ORG_UNIT_USER primary key (UNIT_USER_ID);
 
@@ -532,57 +532,57 @@ create table SYS_ORG_USER
 )
 ;
 comment on table SYS_ORG_USER
-  is 'ç”¨æˆ·è¡¨';
+  is 'ÓÃ»§±í';
 comment on column SYS_ORG_USER.user_id
-  is 'ç”¨æˆ·ID';
+  is 'ÓÃ»§ID';
 comment on column SYS_ORG_USER.account
-  is 'è´¦å·';
+  is 'ÕËºÅ';
 comment on column SYS_ORG_USER.password
-  is 'å¯†ç ';
+  is 'ÃÜÂë';
 comment on column SYS_ORG_USER.fullname
-  is 'å§“å';
+  is 'ĞÕÃû';
 comment on column SYS_ORG_USER.user_type
-  is 'ç”¨æˆ·ç±»å‹';
+  is 'ÓÃ»§ÀàĞÍ';
 comment on column SYS_ORG_USER.pwd_changed_time
-  is 'å¯†ç æœ€åä¸€æ¬¡ä¿®æ”¹æ—¶é—´';
+  is 'ÃÜÂë×îºóÒ»´ÎĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_USER.is_locked
-  is 'é”å®šçŠ¶æ€';
+  is 'Ëø¶¨×´Ì¬';
 comment on column SYS_ORG_USER.locked_reason
-  is 'é”å®šåŸå› ';
+  is 'Ëø¶¨Ô­Òò';
 comment on column SYS_ORG_USER.user_head
-  is 'å¤´åƒ';
+  is 'Í·Ïñ';
 comment on column SYS_ORG_USER.sex
-  is 'æ€§åˆ«';
+  is 'ĞÔ±ğ';
 comment on column SYS_ORG_USER.birthdate
-  is 'ç”Ÿæ—¥';
+  is 'ÉúÈÕ';
 comment on column SYS_ORG_USER.mobile_telephone
-  is 'ç”µè¯å·ç ';
+  is 'µç»°ºÅÂë';
 comment on column SYS_ORG_USER.email
-  is 'é‚®ä»¶åœ°å€';
+  is 'ÓÊ¼şµØÖ·';
 comment on column SYS_ORG_USER.credentials_type
-  is 'è¯ä»¶ç±»å‹';
+  is 'Ö¤¼şÀàĞÍ';
 comment on column SYS_ORG_USER.credentials_number
-  is 'è¯ä»¶å·ç ';
+  is 'Ö¤¼şºÅÂë';
 comment on column SYS_ORG_USER.home_address
-  is 'å®¶åº­ä½å€';
+  is '¼ÒÍ¥×¡Ö·';
 comment on column SYS_ORG_USER.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_ORG_USER.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_ORG_USER.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_ORG_USER.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_ORG_USER.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_ORG_USER.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_ORG_USER.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_ORG_USER.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_ORG_USER.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_ORG_USER
   add constraint PK_SYS_ORG_USER primary key (USER_ID);
 
@@ -605,33 +605,33 @@ create table SYS_SEC_PERMISSION
 )
 ;
 comment on table SYS_SEC_PERMISSION
-  is 'æƒé™è¡¨';
+  is 'È¨ÏŞ±í';
 comment on column SYS_SEC_PERMISSION.permission_id
-  is 'æƒé™ID';
+  is 'È¨ÏŞID';
 comment on column SYS_SEC_PERMISSION.permission_name
-  is 'æƒé™åç§°';
+  is 'È¨ÏŞÃû³Æ';
 comment on column SYS_SEC_PERMISSION.permission_sign
-  is 'æƒé™æ ‡è¯†';
+  is 'È¨ÏŞ±êÊ¶';
 comment on column SYS_SEC_PERMISSION.permission_type
-  is 'åˆ†ç±»';
+  is '·ÖÀà';
 comment on column SYS_SEC_PERMISSION.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_SEC_PERMISSION.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_SEC_PERMISSION.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_SEC_PERMISSION.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_SEC_PERMISSION.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_SEC_PERMISSION.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_SEC_PERMISSION.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_SEC_PERMISSION.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_SEC_PERMISSION.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_SEC_PERMISSION
   add constraint PK_SYS_SEC_PERMISSION primary key (PERMISSION_ID);
 
@@ -657,39 +657,39 @@ create table SYS_SEC_RESOURCE_AUTHORITY
 )
 ;
 comment on table SYS_SEC_RESOURCE_AUTHORITY
-  is 'æˆæƒå…³ç³»è¡¨';
+  is 'ÊÚÈ¨¹ØÏµ±í';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.authority_id
-  is 'æˆæƒID';
+  is 'ÊÚÈ¨ID';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.role_id
-  is 'è§’è‰²ID';
+  is '½ÇÉ«ID';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.resource_id
-  is 'èµ„æºID';
+  is '×ÊÔ´ID';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.resource_type
-  is 'èµ„æºç±»å‹';
+  is '×ÊÔ´ÀàĞÍ';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.authority_type
-  is 'æˆæƒç±»å‹';
+  is 'ÊÚÈ¨ÀàĞÍ';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.constraint
-  is 'ç»´åº¦çº¦æŸ';
+  is 'Î¬¶ÈÔ¼Êø';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.description
-  is 'æè¿°ä¿¡æ¯';
+  is 'ÃèÊöĞÅÏ¢';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_SEC_RESOURCE_AUTHORITY.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_SEC_RESOURCE_AUTHORITY
   add constraint PK_SYS_SEC_RESOURCE_AUTHORITY primary key (AUTHORITY_ID);
 
@@ -716,41 +716,41 @@ create table SYS_SEC_ROLE
 )
 ;
 comment on table SYS_SEC_ROLE
-  is 'è§’è‰²è¡¨';
+  is '½ÇÉ«±í';
 comment on column SYS_SEC_ROLE.role_id
-  is 'è§’è‰²ID';
+  is '½ÇÉ«ID';
 comment on column SYS_SEC_ROLE.role_name
-  is 'è§’è‰²åç§°';
+  is '½ÇÉ«Ãû³Æ';
 comment on column SYS_SEC_ROLE.role_type
-  is 'è§’è‰²ç±»å‹';
+  is '½ÇÉ«ÀàĞÍ';
 comment on column SYS_SEC_ROLE.parent_role_id
-  is 'ä¸Šçº§è§’è‰²ID';
+  is 'ÉÏ¼¶½ÇÉ«ID';
 comment on column SYS_SEC_ROLE.role_path
-  is 'ä¸Šçº§è·¯å¾„';
+  is 'ÉÏ¼¶Â·¾¶';
 comment on column SYS_SEC_ROLE.role_level
-  is 'å±‚çº§';
+  is '²ã¼¶';
 comment on column SYS_SEC_ROLE.time_begin
-  is 'ç”Ÿæ•ˆæ—¶é—´';
+  is 'ÉúĞ§Ê±¼ä';
 comment on column SYS_SEC_ROLE.time_end
-  is 'å¤±æ•ˆæ—¶é—´';
+  is 'Ê§Ğ§Ê±¼ä';
 comment on column SYS_SEC_ROLE.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_SEC_ROLE.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_SEC_ROLE.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_SEC_ROLE.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_SEC_ROLE.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_SEC_ROLE.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_SEC_ROLE.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_SEC_ROLE.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_SEC_ROLE.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_SEC_ROLE
   add constraint PK_SYS_SEC_ROLE primary key (ROLE_ID);
 
@@ -772,31 +772,31 @@ create table SYS_SEC_USER_ROLE
 )
 ;
 comment on table SYS_SEC_USER_ROLE
-  is 'ç”¨æˆ·ä¸è§’è‰²å…³ç³»è¡¨';
+  is 'ÓÃ»§Óë½ÇÉ«¹ØÏµ±í';
 comment on column SYS_SEC_USER_ROLE.role_user_id
-  is 'å…³ç³»ID';
+  is '¹ØÏµID';
 comment on column SYS_SEC_USER_ROLE.user_id
-  is 'ç”¨æˆ·ID';
+  is 'ÓÃ»§ID';
 comment on column SYS_SEC_USER_ROLE.role_id
-  is 'è§’è‰²ID';
+  is '½ÇÉ«ID';
 comment on column SYS_SEC_USER_ROLE.remark
-  is 'å¤‡æ³¨';
+  is '±¸×¢';
 comment on column SYS_SEC_USER_ROLE.active_flag
-  is 'ä½¿ç”¨æ ‡è¯†';
+  is 'Ê¹ÓÃ±êÊ¶';
 comment on column SYS_SEC_USER_ROLE.created_by
-  is 'åˆ›å»ºäºº';
+  is '´´½¨ÈË';
 comment on column SYS_SEC_USER_ROLE.creation_time
-  is 'åˆ›å»ºæ—¶é—´';
+  is '´´½¨Ê±¼ä';
 comment on column SYS_SEC_USER_ROLE.modified_by
-  is 'ä¿®æ”¹äºº';
+  is 'ĞŞ¸ÄÈË';
 comment on column SYS_SEC_USER_ROLE.modification_time
-  is 'ä¿®æ”¹æ—¶é—´';
+  is 'ĞŞ¸ÄÊ±¼ä';
 comment on column SYS_SEC_USER_ROLE.ext1
-  is 'å¤‡æ³¨1';
+  is '±¸×¢1';
 comment on column SYS_SEC_USER_ROLE.ext2
-  is 'å¤‡æ³¨2';
+  is '±¸×¢2';
 comment on column SYS_SEC_USER_ROLE.ext3
-  is 'å¤‡æ³¨3';
+  is '±¸×¢3';
 alter table SYS_SEC_USER_ROLE
   add constraint PK_SYS_SEC_USER_ROLE primary key (ROLE_USER_ID);
 
@@ -828,43 +828,43 @@ prompt Disabling triggers for SYS_SEC_USER_ROLE...
 alter table SYS_SEC_USER_ROLE disable all triggers;
 prompt Loading SAMS_STUDENT...
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('1', '01', 'æä¸€é¸£', 'ç”·', '1983-02-06', '2017-10-25', '2999-12-31', '26', '1', 'admin', null, null, to_timestamp('28-11-2017 10:23:33.916000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('1', '01', 'ÀîÒ»Ãù', 'ÄĞ', '1983-02-06', '2017-10-25', '2999-12-31', '26', '1', 'admin', null, null, to_timestamp('28-11-2017 10:23:33.916000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('2', '02', 'æ²ˆç’', 'å¥³', '1983-10-25', '2017-10-25', '2999-12-31', '36', '1', 'admin', null, null, to_timestamp('27-11-2017 16:53:50.784000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('2', '02', 'Éòè´', 'Å®', '1983-10-25', '2017-10-25', '2999-12-31', '36', '1', 'admin', null, null, to_timestamp('27-11-2017 16:53:50.784000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('4b66d4bf3b9c4656897ab382e64bcdd6', '03', 'ç‹æ˜', 'ç”·', '2017-11-27', '2017-11-27', null, '222', '1', null, to_timestamp('27-11-2017 16:38:47.499000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('27-11-2017 16:53:35.833000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('4b66d4bf3b9c4656897ab382e64bcdd6', '03', 'ÍõÃ÷', 'ÄĞ', '2017-11-27', '2017-11-27', null, '222', '1', null, to_timestamp('27-11-2017 16:38:47.499000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('27-11-2017 16:53:35.833000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('f18732328d9f4912b1e40e3082843848', '08', 'å¾å»ºå…´', 'ç”·', '2017-11-23', '2017-11-23', null, '111', '1', null, to_timestamp('27-11-2017 16:54:16.918000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
+values ('f18732328d9f4912b1e40e3082843848', '08', 'Ğì½¨ĞË', 'ÄĞ', '2017-11-23', '2017-11-23', null, '111', '1', null, to_timestamp('27-11-2017 16:54:16.918000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('f3c181f488a345b4a717734d02c0388c', '05', 'åˆ˜å†å†¬', 'ç”·', '2017-11-15', '2017-11-27', null, '333', '1', null, to_timestamp('27-11-2017 16:40:17.924000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('01-12-2017 19:49:12.594000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('f3c181f488a345b4a717734d02c0388c', '05', 'ÁõÔÙ¶¬', 'ÄĞ', '2017-11-15', '2017-11-27', null, '333', '1', null, to_timestamp('27-11-2017 16:40:17.924000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('01-12-2017 19:49:12.594000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 insert into SAMS_STUDENT (student_id, student_no, student_name, sex, birth_date, start_time, finish_time, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('cc05168ecfda46419428ac60f30c9966', '12', 'é©¬ç« å…ƒ', 'ç”·', '2017-12-08', '2017-12-08', null, '123', '1', null, to_timestamp('08-12-2017 18:18:15.793000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('16-12-2017 14:14:05.133000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
+values ('cc05168ecfda46419428ac60f30c9966', '12', 'ÂíÕÂÔª', 'ÄĞ', '2017-12-08', '2017-12-08', null, '123', '1', null, to_timestamp('08-12-2017 18:18:15.793000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, to_timestamp('16-12-2017 14:14:05.133000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null);
 commit;
 prompt 6 records loaded
 prompt Loading SAMS_TEACHER...
 prompt Table is empty
 prompt Loading SYS_CODELIST...
 insert into SYS_CODELIST (code_id, code_value, code_value_name, code_type, code_type_name, code_parent, code_order, filter, language, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('SF_1', '1', 'æ˜¯', 'SF', 'æ˜¯å¦', '-1', null, null, 'zh_CN', null, '1', 'admin', to_timestamp('15-11-2017 00:00:00.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
+values ('SF_1', '1', 'ÊÇ', 'SF', 'ÊÇ·ñ', '-1', null, null, 'zh_CN', null, '1', 'admin', to_timestamp('15-11-2017 00:00:00.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
 insert into SYS_CODELIST (code_id, code_value, code_value_name, code_type, code_type_name, code_parent, code_order, filter, language, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('SF_2', '2', 'å¦', 'SF', 'æ˜¯å¦', '-1', null, null, 'zh_CN', null, '1', 'admin', to_timestamp('15-11-2017 00:00:00.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
+values ('SF_2', '2', '·ñ', 'SF', 'ÊÇ·ñ', '-1', null, null, 'zh_CN', null, '1', 'admin', to_timestamp('15-11-2017 00:00:00.000000', 'dd-mm-yyyy hh24:mi:ss.ff'), null, null, null, null, null);
 commit;
 prompt 2 records loaded
 prompt Loading SYS_MENU...
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('1', 'åå°é¦–é¡µ', null, 'rest/page/dashboard', 'icon-computer', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+values ('1', 'ºóÌ¨Ê×Ò³', null, 'rest/page/dashboard', 'icon-computer', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('2', 'æ–‡ç« åˆ—è¡¨', null, 'rest/page/news', 'icon-text', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+values ('2', 'ÎÄÕÂÁĞ±í', null, 'rest/page/news', 'icon-text', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('3', 'å‹æƒ…é“¾æ¥', null, 'rest/page/links', '&#xe64c;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+values ('3', 'ÓÑÇéÁ´½Ó', null, 'rest/page/links', '&#xe64c;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('4', 'ç³»ç»ŸåŸºæœ¬å‚æ•°', null, 'rest/page/sysparam', '&#xe631;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+values ('4', 'ÏµÍ³»ù±¾²ÎÊı', null, 'rest/page/sysparam', '&#xe631;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('5', 'å…¶ä»–é¡µé¢', null, null, '&#xe630;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
+values ('5', 'ÆäËûÒ³Ãæ', null, null, '&#xe630;', null, null, null, null, null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('6', '404é¡µé¢', null, 'rest/page/404', '&#xe61c;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
+values ('6', '404Ò³Ãæ', null, 'rest/page/404', '&#xe61c;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
 insert into SYS_MENU (menu_id, title, target, href, icon, spread, menu_order, show_default, parent_menu_id, app_id, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('7', 'ç™»å½•', '_blank', 'rest/page/login', '&#xe609;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
+values ('7', 'µÇÂ¼', '_blank', 'rest/page/login', '&#xe609;', null, null, null, '5', null, null, '1', null, null, null, null, null, null, null);
 commit;
 prompt 7 records loaded
 prompt Loading SYS_ORG_DIMENSION...
@@ -877,9 +877,11 @@ prompt Loading SYS_ORG_UNIT_USER...
 prompt Table is empty
 prompt Loading SYS_ORG_USER...
 insert into SYS_ORG_USER (user_id, account, password, fullname, user_type, pwd_changed_time, is_locked, locked_reason, user_head, sex, birthdate, mobile_telephone, email, credentials_type, credentials_number, home_address, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
-values ('admin', 'admin', '1', 'ç³»ç»Ÿç®¡ç†å‘˜', 'sys', null, 'F', null, null, null, null, null, null, null, null, null, null, '1', 'admin', null, null, null, null, null, null);
+values ('admin', 'admin', '1', 'ÏµÍ³¹ÜÀíÔ±', 'sys', null, 'F', null, 'assets/images/userhead/icelake.jpg', null, null, null, null, null, null, null, null, '1', 'admin', null, null, null, null, null, null);
+insert into SYS_ORG_USER (user_id, account, password, fullname, user_type, pwd_changed_time, is_locked, locked_reason, user_head, sex, birthdate, mobile_telephone, email, credentials_type, credentials_number, home_address, remark, active_flag, created_by, creation_time, modified_by, modification_time, ext1, ext2, ext3)
+values ('boa', 'boa', '102526', 'Éòè´', 'user', null, 'F', null, 'assets/images/userhead/boa.jpg', null, null, null, null, null, null, null, null, '1', 'admin', null, null, null, null, null, null);
 commit;
-prompt 1 records loaded
+prompt 2 records loaded
 prompt Loading SYS_SEC_PERMISSION...
 prompt Table is empty
 prompt Loading SYS_SEC_RESOURCE_AUTHORITY...

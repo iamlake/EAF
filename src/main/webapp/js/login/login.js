@@ -16,7 +16,7 @@ layui.use([ 'form', 'layer' ], function() {
 			data : data.field,
 			success : function(result) {
 				if(result.code == '0'){
-					window.location.href = "rest/page/index";
+					window.location.href = basePath + "rest/page/index";
 				}else{
 					if (result.msg != null) {
 						layer.msg(result.msg, {

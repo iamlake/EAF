@@ -7,7 +7,7 @@ public class Global {
      * <br>Author:李一鸣(liyiming.neu@neusoft.com)
      * <br>Date:2017年12月17日
      */
-    public static final String USER_SESSION = "USER_SESSION";
+    public static final String USER_SESSION = "user_session";
 
     /**
      * <br>Description: 成功时的状态码 - 默认0

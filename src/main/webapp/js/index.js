@@ -152,10 +152,9 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 					+ loginUser.fullname
 					+ '</div>'
 					+ '<div class="input_btn">'
-					+ '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="enter password.." name="lockPwd" id="lockPwd" />'
+					+ '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'
 					+ '<button class="layui-btn" id="unlock">解锁</button>'
 					+ '</div>'
-					+ '<p>请输入您的密码，否则不会解锁成功哦！！！</p>'
 					+ '</div>',
 			closeBtn : 0,
 			shade : 0.9

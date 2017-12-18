@@ -151,6 +151,16 @@
 			<param-name>kaptcha.textproducer.char.length</param-name>
 			<param-value>4</param-value>
 		</init-param>
+		<!-- 字体大小 -->
+		<init-param>
+			<param-name>kaptcha.textproducer.font.size</param-name>
+			<param-value>30</param-value>
+		</init-param>
+        <!-- 使用哪些字体 -->
+        <init-param>
+            <param-name>kaptcha.textproducer.font.names</param-name>
+            <param-value>Arial</param-value>
+        </init-param>   		
 	</servlet>
 	<!-- 拦截request路径为/kaptcha.jpg的请求，然后调用kaptcha产生验证码 -->
 	<servlet-mapping>

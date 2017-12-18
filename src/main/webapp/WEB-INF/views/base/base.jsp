@@ -14,8 +14,8 @@
 <script type="text/javascript">
 	var basePath = '<%=basePath%>';
 	var loginUser = {
-		account : '${USER_SESSION.account }',
-		fullname : '${USER_SESSION.fullname }',
-		userHead : '${USER_SESSION.userHead }'
+		account : '${user_session.account }',
+		fullname : '${user_session.fullname }',
+		userHead : '${user_session.userHead }'
 	}
 </script>
