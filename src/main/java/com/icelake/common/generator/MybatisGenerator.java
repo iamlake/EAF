@@ -24,7 +24,7 @@ public class MybatisGenerator {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         // 读取配置文件
-        URL url = MybatisGenerator.class.getClassLoader().getResource("generatorConfig-sys.xml");
+        URL url = MybatisGenerator.class.getClassLoader().getResource("generatorConfig.xml");
         File configFile = new File(url.getFile());
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config;

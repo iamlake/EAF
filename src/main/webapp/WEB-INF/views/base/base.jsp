@@ -7,7 +7,7 @@
 <!-- layui -->
 <link rel="icon" href="images/favicon.ico">
 <link rel="stylesheet" href="<%=basePath%>assets/layui/css/layui.css" media="all" />
-<link rel="stylesheet" href="<%=basePath%>assets/css/common.css" media="all" />
+<link rel="stylesheet" href="<%=basePath%>assets/css/global.css" media="all" />
 <script type="text/javascript" src="<%=basePath%>assets/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>assets/js/global.js"></script>
 <!-- TODO 页面公共资源 -->
