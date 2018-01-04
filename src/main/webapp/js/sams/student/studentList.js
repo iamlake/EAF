@@ -103,7 +103,9 @@ layui.use(['layer','table','eaf'],function(){
 			var index = layui.layer.open({
 				title : dialog,
 				type : 2,
-				maxmin: true,
+				//area : ['1024px', '650px'],
+				//offset : 'lt',
+				//maxmin: true,
 				content : "rest/page/sams_student_studentEdit",
 				success : function(layero, index){
 					setTimeout(function(){
@@ -114,8 +116,10 @@ layui.use(['layer','table','eaf'],function(){
 				}
 			})
 			//改变窗口大小时，重置弹窗的高度，防止超出可视区域（如F12调出debug的操作）
-			$(window).resize(function(){
-				layui.layer.full(index);
+			$(window).resize(function() {
+				setTimeout(function() {
+					layui.layer.full(index);
+				}, 150)				
 			})
 			layui.layer.full(index);
 		}
