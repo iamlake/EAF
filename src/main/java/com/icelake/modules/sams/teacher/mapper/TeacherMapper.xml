@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.icelake.modules.sams.teacher.dao.TeacherMapper">
+<mapper namespace="com.icelake.modules.sams.teacher.dao.TeacherDAO">
   <resultMap id="BaseResultMap" type="com.icelake.modules.sams.teacher.entity.Teacher">
     <id column="TEACHER_ID" jdbcType="VARCHAR" property="teacherId" />
     <result column="TEACHER_NO" jdbcType="VARCHAR" property="teacherNo" />
