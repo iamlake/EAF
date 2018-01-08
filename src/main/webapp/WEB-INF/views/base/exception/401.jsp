@@ -15,7 +15,7 @@
 	<body class="childrenBody">
 		<div style="text-align: center; padding:11% 0;">
 			<i class="layui-icon" style="line-height:20rem; font-size:20rem; color: #393D50;">&#x1007;</i>
-			<p style="font-size: 20px; font-weight: 300; color: #999;">我勒个去，还没有权限查看页面呢!</p>
+			<p style="font-size: 20px; font-weight: 300; color: #999;">Authorization Required</p>
 		</div>
 	</body>
 </html>

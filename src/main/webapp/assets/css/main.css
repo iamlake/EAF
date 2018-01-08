@@ -26,6 +26,23 @@
 .component .layui-form-select .layui-edge,.top_menu .layui-nav-item[mobile]{ display:none; }
 .component .layui-icon{ position: absolute; right:8px; top:8px; color:#000; }
 
+/*顶部切换应用*/
+.more-app-color  li {
+	display: inline-block;
+	vertical-align: middle;
+	width: 180px;
+	height: 60px;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	padding: 20px 10px;
+	color: #fff;
+	text-align: center;
+	border-radius: 2px;
+	line-height: 22px;
+	font-size: 14px;
+}
+
 /*顶部右侧导航*/
 .layui-nav .layui-nav-item>a{ color:#fff; }
 .top_menu{ position:absolute; right:0; background:none }
@@ -145,7 +162,6 @@
 
 /*底部*/
 .footer{ text-align: center; line-height:44px;border-left: 2px solid #1AA094;}
-
 
 /*响应式*/
 @media screen and (max-width:1282px){

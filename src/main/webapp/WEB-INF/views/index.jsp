@@ -12,7 +12,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="format-detection" content="telephone=no">
-		<link rel="stylesheet" href="http://at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
 		<link rel="stylesheet" href="assets/css/main.css" media="all" />
 		<script type="text/javascript" src="js/leftNav.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>	
@@ -88,6 +87,11 @@
 								<dd><a href="rest/logout" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
 							</dl>
 						</li>
+						<li class="layui-nav-item" pc>
+							<a href="javascript:;">
+								<i class="layui-icon moreApps" style="font-size: 20px;">&#xe671;<span class="layui-badge-dot"></span></i>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -124,7 +128,7 @@
 			</div>
 			<!-- 底部 -->
 			<div class="layui-footer footer">
-				<p>Copyright @2017 Liyiming.neu　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-sm">捐赠作者</a></p>
+				<p>Copyright @2017 Liyiming　　<a onclick="donation()" class="layui-btn layui-btn-danger layui-btn-sm">捐赠作者</a></p>
 			</div>
 		</div>
 		

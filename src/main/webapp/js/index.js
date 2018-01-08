@@ -200,6 +200,78 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 			$("#unlock").click();
 		}
 	});
+	
+	//切换应用
+	function changeApp() {
+		var appList = [
+			{
+				"bgcolor" : "#009688;",
+				"appname" : "#009688",
+				"tips" : "通常用于按钮、及任何修饰元素"
+			}, {
+				"bgcolor" : "#5FB878;",
+				"appname" : "#5FB878",
+				"tips" : "一般用于选中状态"
+			}, {
+				"bgcolor" : "#393D49;",
+				"appname" : "#393D49",
+				"tips" : "通常用于导航"
+			}, {
+				"bgcolor" : "#1E9FFF;",
+				"appname" : "#1E9FFF",
+				"tips" : "比较适合一些鲜艳色系的页面"
+			}, {
+				"bgcolor" : "#FFB800;",
+				"appname" : "#FFB800",
+				"tips" : "暖色系，一般用于提示性元素"
+			}, {
+				"bgcolor" : "#FF5722;",
+				"appname" : "#FF5722",
+				"tips" : "比较引人注意的颜色"
+			}, {
+				"bgcolor" : "#01AAED;",
+				"appname" : "#01AAED",
+				"tips" : "用于文字着色，如链接文本"
+			}, {
+				"bgcolor" : "#2F4056;",
+				"appname" : "#2F4056",
+				"tips" : "侧边或底部普遍采用的颜色"
+			}
+		];
+		
+		var innerhtml = '<div class="layui-layer layui-layer-page more-app"'
+				+ ' id="layui-layer68" type="page" times="68" showtime="0" contype="string"'
+				+ ' style="background-color: rgba(0,0,0,0.8);'
+				+ ' z-index: 19891082; width: 100%; top: 0px; left: 0px;">'
+				+ '<div id="" class="layui-layer-content">'
+				+ '<ul class="more-app-color">';
+				
+		for (var i = 0; i < (appList.length > 8 ? 8 : appList.length); i++) {
+			innerhtml += '<li style="background-color: '+appList[i].bgcolor+'">';
+			innerhtml += '<p>'+appList[i].appname+'<p>'
+			innerhtml += '<p tips>'+appList[i].tips+'</p>'
+			innerhtml += '</li>'
+		}
+		innerhtml += '</ul></div>'
+				+ '<span class="layui-layer-setwin"></span>'
+				// + '<span class="layui-layer-resize"></span>'
+				+ '</div>';
+  
+		layer.open({
+			type : 1,
+			title : false,
+			offset: 't',
+			anim: 1,
+			closeBtn : 0,
+			shadeClose : true,
+			skin : 'layui-layer-nobg',
+			content : innerhtml
+		});
+	}	
+	$(".moreApps").on("click",function(){
+		changeApp();
+	})	
+	
 
 	//手机设备的简单适配
 	var treeMobile = $('.site-tree-mobile'),
