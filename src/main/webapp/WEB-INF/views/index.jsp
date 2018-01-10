@@ -89,7 +89,10 @@
 						</li>
 						<li class="layui-nav-item" pc>
 							<a href="javascript:;">
+							<!-- 
 								<i class="layui-icon moreApps" style="font-size: 20px;">&#xe671;<span class="layui-badge-dot"></span></i>
+								 -->
+								<i class="layui-icon layui-icon-app moreApps" style="font-size: 20px;"><span class="layui-badge-dot"></span></i>
 							</a>
 						</li>
 					</ul>
@@ -121,7 +124,7 @@
 					</ul>
 					<div class="layui-tab-content clildFrame">
 						<div class="layui-tab-item layui-show">
-							<iframe src="rest/page/dashboard"></iframe>
+							<iframe src=""></iframe>
 						</div>
 					</div>
 				</div>

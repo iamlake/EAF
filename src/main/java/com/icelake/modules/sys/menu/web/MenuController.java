@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,6 +27,13 @@ public class MenuController extends BaseController {
     @ResponseBody
     public Result findMenuList(Menu menu) {
         List<Menu> list = menuService.findList(menu);
+        return new QueryResult<Menu>(Global.RESULT_STAUTS_SUCCESS, "", list, list.size());
+    }
+
+    @RequestMapping(value = "/menu/{appId}", method = RequestMethod.GET)
+    @ResponseBody
+    public Result findMenuList(@PathVariable("appId") String appId) {
+        List<Menu> list = menuService.findList(appId);
         return new QueryResult<Menu>(Global.RESULT_STAUTS_SUCCESS, "", list, list.size());
     }
 }
