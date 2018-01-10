@@ -1,6 +1,6 @@
-layui.use(['form','layer','jquery','laydate','util','eaf'],function(){
+layui.use(['form','layer','jquery','laydate','util','elf'],function(){
 	var form = layui.form, layer = layui.layer, laydate = layui.laydate, util = layui.util;
-	var $ = layui.$, eaf = layui.eaf;
+	var $ = layui.$, elf = layui.elf;
 	var isNew = false;
 
 	laydate.render({
@@ -15,7 +15,7 @@ layui.use(['form','layer','jquery','laydate','util','eaf'],function(){
 		if (!isNew) {
 			ext += ';_method:put';
 		}
-		var formData = eaf.getBinding($('.layui-form'), ext);
+		var formData = elf.getBinding($('.layui-form'), ext);
 		// 弹出loading
 		var index = top.layer.msg('数据提交中，请稍候…', {
 			icon : 16,
@@ -48,7 +48,7 @@ layui.use(['form','layer','jquery','laydate','util','eaf'],function(){
 		if(null == studentData){
 			isNew = true;
 		}else{
-			eaf.setData($('.layui-form'), studentData);
+			elf.setData($('.layui-form'), studentData);
 			form.render();
 		}
 	});		 	

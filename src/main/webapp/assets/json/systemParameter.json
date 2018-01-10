@@ -1,5 +1,5 @@
 {
-    "cmsName": "EAF简单应用框架",
+    "cmsName": "ELF简单应用框架",
     "version": "v0.0.1",
     "author": "Liyiming",
     "homePage": "page/index.html",
@@ -7,8 +7,8 @@
     "dataBase": "8.00.2039",
     "maxUpload": "2M",
     "userRights": "系统管理员",
-    "description": "这是作者基于EAF理念自行开发的JavaEE项目骨架",
+    "description": "这是一个基于Layui前端的JavaEE项目骨架",
     "powerby": "copyright @2017 Liyiming",
     "record": "辽ICP备15236xxx号-1",
-    "keywords": "JavaEE，Spring，LayUI，EAF"
+    "keywords": "JavaEE，Spring，LayUI，ELF"
 }

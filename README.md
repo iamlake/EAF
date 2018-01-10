@@ -1,12 +1,14 @@
-# EAF 简单应用框架
+# ELF
 
 ## 项目简介
 
-**EAF** 是一个通用JavaWeb项目骨架，作为一个 seed(种子) 项目，你可以基于它快速搭建项目原型，并进行开发。
+**ELF** 是一个通用JavaWeb项目骨架，作为一个 seed(种子) 项目，你可以基于它快速搭建项目原型，并进行开发。
 
-EAF本身是以Spring Framework为核心容器，Spring MVC为模型视图控制器，MyBatis为数据访问层，Apache Shiro为权限授权层，Ehcahe对常用数据进行缓存。
+ELF本身是以Spring Framework为核心容器，Spring MVC为模型视图控制器，MyBatis为数据访问层，Apache Shiro为权限授权层，Ehcahe对常用数据进行缓存。
 
 在未来版本会考虑集成Activit工作流引擎，并增加内置功能模块。
+
+（框架重新定位，正式更名为ELF，2018年1月10日）
 
 ## 内置功能
 

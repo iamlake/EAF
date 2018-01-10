@@ -97,5 +97,5 @@ layui.define([ 'jquery' ], function(exports) {
 
 	}
 	
-	exports('eaf', obj);
+	exports('elf', obj);
 });

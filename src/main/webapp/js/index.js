@@ -1,12 +1,13 @@
 var $,tab,skyconsWeather;
 if (window.sessionStorage.getItem("curapp") == null)
 	window.sessionStorage.setItem("curapp", "1");
-layui.use(['bodyTab','form','element','layer','jquery'],function(){
-	
+layui.use(['bodyTab','form','element','layer','jquery','linq'],function(){
 	var form = layui.form,
 		layer = layui.layer,
-		element = layui.element;
+		element = layui.element,
+		linq = layui.linq;
 		$ = layui.jquery;
+		
 		tab = layui.bodyTab({
 			openTabNum : "20",  //最大可打开窗口数量
 			url : "rest/menu/"+window.sessionStorage.getItem("curapp") //获取菜单json地址
@@ -196,7 +197,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 							lockinput.val('').focus();
 						}
 					}else{
-						layer.msg("您还不能这么做！");
+						layer.msg("请刷新页面后重试！");
 						lockinput.val('').focus();
 					}
 				}
@@ -212,7 +213,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	//切换应用
 	changeApp = function(id) {
 		//alert("选中app_id是：" + id);
-		window.sessionStorage.setItem("curapp",id);
+		window.sessionStorage.setItem("curapp", id);
 		//渲染左侧菜单
 		//tab.render();
 		window.sessionStorage.removeItem("menu");
@@ -222,84 +223,41 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 	}
 	
 	function apps() {
-		var appList = [
-			{
-				"app_id" : "1",
-				"style" : "#009688;",
-				"title" : "#009688",
-				"remark" : "通常用于按钮、及任何修饰元素"
-			}, {
-				"app_id" : "2",
-				"style" : "#5FB878;",
-				"title" : "#5FB878",
-				"remark" : "一般用于选中状态"
-//			}, {
-//				"app_id" : "3",
-//				"style" : "#393D49;",
-//				"title" : "#393D49",
-//				"remark" : "通常用于导航"
-			}, {
-				"app_id" : "4",
-				"style" : "#1E9FFF;",
-				"title" : "#1E9FFF",
-				"remark" : "比较适合一些鲜艳色系的页面"
-			}, {
-				"app_id" : "5",
-				"style" : "#FFB800;",
-				"title" : "#FFB800",
-				"remark" : "暖色系，一般用于提示性元素"
-			}, {
-				"app_id" : "6",
-				"style" : "#FF5722;",
-				"title" : "#FF5722",
-				"remark" : "比较引人注意的颜色"
-			}, {
-				"app_id" : "7",
-				"style" : "#01AAED;",
-				"title" : "#01AAED",
-				"remark" : "用于文字着色，如链接文本"
-//			}, {
-//				"app_id" : "8",
-//				"style" : "#2F4056;",
-//				"title" : "#2F4056",
-//				"remark" : "侧边或底部普遍采用的颜色"
-			}
-		];
-		
-		var innerhtml = '<div class="layui-layer layui-layer-page more-app"'
+		$.get("assets/json/apps.json", function(data) {
+			var innerhtml = '<div class="layui-layer layui-layer-page more-app"'
 				+ ' id="layui-layer68" type="page" times="68" showtime="0" contype="string"'
 				+ ' style="background-color: rgba(0,0,0,0.7);'
 				+ ' z-index: 19891082; width: 100%; top: 0px; left: 0px;">'
 				+ '<div id="" class="layui-layer-content">'
 				+ '<ul class="more-app-color">';
 		
-		if(appList.length < 1)
-			return null;
-				
-		for (var i = 0; i < appList.length; i++) {
-			innerhtml += '<li style="background-color: '+appList[i].style+'">';
-			innerhtml += '<a href="javascript:;" onclick=changeApp(\''+appList[i].app_id+'\')>';
-			innerhtml += '<p>'+appList[i].title+'<p>';
-			innerhtml += '<p tips>'+appList[i].remark+'</p>';
-			innerhtml += '</a>';
-			innerhtml += '</li>';
-		}
-		innerhtml += '</ul></div>'
-				+ '<span class="layui-layer-setwin"></span>'
-				// + '<span class="layui-layer-resize"></span>'
-				+ '</div>';
-  
-		layer.open({
-			type : 1,
-			title : false,
-			offset: 't',
-			anim: 1,
-			closeBtn : 0,
-			shadeClose : true,
-			skin : 'layui-layer-nobg',
-			content : innerhtml
-		});
-	}	
+			if(data.length < 1)
+				return null;
+					
+			linq.from(data).forEach(function(value, index){
+				innerhtml += '<li style="background-color: '+value.style+'">';
+				innerhtml += '<a href="javascript:;" onclick=changeApp(\''+value.app_id+'\')>';
+				innerhtml += '<p>'+value.title+'<p>';
+				innerhtml += '<p tips>'+value.remark+'</p>';
+				innerhtml += '</a>';
+				innerhtml += '</li>';				
+			 });
+			innerhtml += '</ul></div>'
+					+ '<span class="layui-layer-setwin"></span>'
+					+ '</div>';
+	  
+			layer.open({
+				type : 1,
+				title : false,
+				offset: 't',
+				anim: 1,
+				closeBtn : 0,
+				shadeClose : true,
+				skin : 'layui-layer-nobg',
+				content : innerhtml
+			});			
+		})
+	}
 	$(".moreApps").on("click",function(){
 		apps();
 	})

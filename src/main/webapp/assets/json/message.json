@@ -14,7 +14,7 @@
     "msgId" : "2222",
     "userface" : "http://localhost:8088/sams/assets/images/userface2.jpg",
     "userName" : "小李",
-    "userAsk" : "管理员你好，请问EAF如何绑定表单数据啊？",
+    "userAsk" : "管理员你好，请问ELF如何绑定表单数据啊？",
     "askTime" : "2017-05-27 12:50",
     "msgReply" : []
 },{

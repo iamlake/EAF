@@ -1,7 +1,7 @@
 var tabFilter, menu = [], liIndex, curNav, delMenu;
-layui.define(["element", "jquery", "eaf"], function(exports) {
+layui.define(["element", "jquery", "elf"], function(exports) {
 	var element = layui.element,
-		$ = layui.jquery, eaf = layui.eaf, layId,
+		$ = layui.jquery, elf = layui.elf, layId,
 		Tab = function(){
 			this.tabConfig = {
 				closed : true,  
@@ -15,7 +15,7 @@ layui.define(["element", "jquery", "eaf"], function(exports) {
 	Tab.prototype.render = function() {
 		var url = this.tabConfig.url;
 		$.get(url,function(result){
-			var data = eaf.transTreeData(result.data, 'menuId',	'parentMenuId', 'children');
+			var data = elf.transTreeData(result.data, 'menuId',	'parentMenuId', 'children');
 			//显示左侧菜单
 			if($(".navBar").html() == ''){
 				var _this = this;

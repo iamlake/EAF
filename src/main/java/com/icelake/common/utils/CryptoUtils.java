@@ -16,7 +16,7 @@ import javax.crypto.spec.DESKeySpec;
  */
 public class CryptoUtils {
 
-    private static final String PASSWORD_CRYPT_KEY = "__EAF@Lym5236__";
+    private static final String PASSWORD_CRYPT_KEY = "__ELF@Lym5236__";
 
     /**
      * <br>Description: 二行制转字符串
