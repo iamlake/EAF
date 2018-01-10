@@ -1,7 +1,7 @@
-layui.use(['layer','table','eaf'],function(){
+layui.use(['layer','table','elf'],function(){
 	var layer = parent.layer === undefined ? layui.layer : parent.layer,
 		table = layui.table;
-	var eaf = layui.eaf;	
+	var elf = layui.elf;	
 	
 	var tableJson ={
 		elem : '#table_student',
@@ -31,19 +31,19 @@ layui.use(['layer','table','eaf'],function(){
 				field : 'birthDate',
 				title : '出生日期',
 				width : 150
-				//,templet : '<div>{{ layui.eaf.dateFormat(d.birthDate,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.elf.dateFormat(d.birthDate,"yyyy-MM-dd")}}</div>'
 			},
 			{
 				field : 'startTime',
 				title : '入学时间',
 				width : 150
-				//,templet : '<div>{{ layui.eaf.dateFormat(d.startTime,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.elf.dateFormat(d.startTime,"yyyy-MM-dd")}}</div>'
 			},
 			{
 				field : 'finishTime',
 				title : '毕业时间',
 				width : 150
-				//,templet : '<div>{{ layui.eaf.dateFormat(d.finishTime,"yyyy-MM-dd")}}</div>'
+				//,templet : '<div>{{ layui.elf.dateFormat(d.finishTime,"yyyy-MM-dd")}}</div>'
 			}, {
 				field : 'remark',
 				title : '备注',

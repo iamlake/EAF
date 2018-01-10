@@ -4,7 +4,7 @@
 	<head>
 		<%@ include file="/WEB-INF/views/base/base.jsp" %>
 		<base href="<%=basePath%>">
-		<title>EAF后台管理模板</title>
+		<title>ELF后台管理模板</title>
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -21,7 +21,7 @@
 			<!-- 顶部 -->
 			<div class="layui-header header">
 				<div class="layui-main">
-					<a href="#" class="logo">EAF后台管理</a>
+					<a href="#" class="logo">ELF后台管理</a>
 					<!-- 显示/隐藏菜单 -->
 					<a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
 					<!-- 搜索 -->

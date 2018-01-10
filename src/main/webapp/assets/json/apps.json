@@ -1,0 +1,67 @@
+[
+	{
+		"app_id" : "1",
+		"style" : "#009688;",
+		"title" : "#009688",
+		"href" : "rest/page/dashboard",
+		"app_order" : "1",
+		"show_default" : "",	
+		"remark" : "通常用于按钮、及任何修饰元素"
+	}, {
+		"app_id" : "2",
+		"style" : "#5FB878;",
+		"title" : "#5FB878",
+		"href" : "rest/page/dashboard",
+		"app_order" : "2",
+		"show_default" : "",					
+		"remark" : "一般用于选中状态"
+	}, {
+		"app_id" : "3",
+		"style" : "#393D49;",
+		"title" : "#393D49",
+		"href" : "rest/page/dashboard",
+		"app_order" : "3",
+		"show_default" : "",					
+		"remark" : "通常用于导航"
+	}, {
+		"app_id" : "4",
+		"style" : "#1E9FFF;",
+		"title" : "#1E9FFF",
+		"href" : "rest/page/dashboard",
+		"app_order" : "4",
+		"show_default" : "",					
+		"remark" : "比较适合一些鲜艳色系的页面"
+	}, {
+		"app_id" : "5",
+		"style" : "#FFB800;",
+		"title" : "#FFB800",
+		"href" : "rest/page/dashboard",
+		"app_order" : "5",
+		"show_default" : "",					
+		"remark" : "暖色系，一般用于提示性元素"
+	}, {
+		"app_id" : "6",
+		"style" : "#FF5722;",
+		"title" : "#FF5722",
+		"href" : "rest/page/dashboard",
+		"app_order" : "6",
+		"show_default" : "",					
+		"remark" : "比较引人注意的颜色"
+	}, {
+		"app_id" : "7",
+		"style" : "#01AAED;",
+		"title" : "#01AAED",
+		"href" : "rest/page/dashboard",
+		"app_order" : "7",
+		"show_default" : "",					
+		"remark" : "用于文字着色，如链接文本"
+	}, {
+		"app_id" : "8",
+		"style" : "#2F4056;",
+		"title" : "#2F4056",
+		"href" : "rest/page/dashboard",
+		"app_order" : "8",
+		"show_default" : "",					
+		"remark" : "侧边或底部普遍采用的颜色"
+	}
+]

@@ -5,7 +5,7 @@
 	<%@ include file="/WEB-INF/views/base/base.jsp" %>
 	<base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>首页——EAF后台管理模板</title>
+	<title>首页——ELF后台管理模板</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -114,7 +114,7 @@
 				<p>* 【开发环境】Java EE、Eclipse、Maven、Git</p>
 				<br />
 				<p># v0.0.1（新增） - 2017-10-25</p>
-				<p>* EAF框架设计初步构想</p>
+				<p>* ELF框架设计初步构想</p>
 			</div>
 		</div>
 		<div class="sysNotice col">

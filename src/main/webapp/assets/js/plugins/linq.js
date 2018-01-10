@@ -3011,6 +3011,11 @@
     else if (typeof module !== Types.Undefined && module.exports) { // Node
         module.exports = Enumerable;
     }
+    else if (window.layui && layui.define) { // layui加载
+		layui.define(function(exports) {
+			exports('linq', Enumerable);
+		});
+	}    
     else {
         root.Enumerable = Enumerable;
     }

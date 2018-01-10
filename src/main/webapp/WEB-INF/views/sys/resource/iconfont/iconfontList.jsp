@@ -2265,7 +2265,7 @@
 	                <i class="icon layui-icon layui-icon-set"></i>
 	                    <div class="name">set</div>
 	                    <div class="fontclass">.layui-icon-set</div>
-	                </li>
+	                </li>           
 			</ul>
 		</div>
 		<div class="main markdown">
