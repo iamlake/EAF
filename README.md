@@ -8,7 +8,7 @@ ELF本身是以Spring Framework为核心容器，Spring MVC为模型视图控制
 
 在未来版本会考虑集成Activit工作流引擎，并增加内置功能模块。
 
-（框架重新定位，正式更名为ELF，2018年1月10日）
+> （框架重新定位，正式更名为ELF，2018年1月10日）
 
 ## 内置功能
 
@@ -26,7 +26,7 @@ ELF本身是以Spring Framework为核心容器，Spring MVC为模型视图控制
 * 数据库连接池：Alibaba Druid 1.0
 * 缓存框架：Ehcache 2.6
 * 日志管理：SLF4J 1.7、Log4j 1.2
-* 工具类：Apache Commons、Jackson 2.9、Xstream 1.4、Dozer 5.5、POI 3.9
+* 工具类：Apache Commons、Jackson 2.9、Xstream 1.4、Dozer 5.5、POI 3.9、lombok 1.6.10
 * 代码生成器：MyBatis-generator 1.3.5
 * 分页插件：pagehelper 5.1.2
 

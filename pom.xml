@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	
 	<name>sams</name>
-	<url>https://github.com/iamlake/EAF</url>
+	<url>https://github.com/iamlake/ELF</url>
 	<inceptionYear>2016-2018</inceptionYear>	
 	
 	<!-- 项目属性 -->
@@ -568,6 +568,14 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>${poi.version}</version>
+		</dependency>
+
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.10</version>
+			<scope>provided</scope>
 		</dependency>
 		
 		<!-- image util -->
